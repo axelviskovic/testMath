@@ -1,0 +1,52 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(#FF986B, #F94A4A);
+    margin: 0;
+    padding: 0;
+}
+
+#logoMentalo{
+    display: block;
+    width: 760px;
+    height: auto;
+    margin: 20px auto;
+}
+
+.containerAddPlayer{
+    width: 80%;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    border: 15px solid white;
+    margin: 0 auto;
+}
+
+.inputAddPlayer{
+    display: inline-block;
+    width: 75%;
+    height: 50px;
+    background-color: transparent;
+    margin-left: 10%;
+    border: none;
+}
+
+.inputAddPlayer::placeholder{
+    font-family: Orangina;
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.buttonAddPlayer{
+    display: inline-block;
+    width: 15%;
+    background-color: transparent;
+}
+
+
+
+@font-face {
+    font-family: Orangina;
+    src: url(Orangina-Demo.ttf) format("truetype");
+}
