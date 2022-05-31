@@ -5,6 +5,11 @@ body{
     background: linear-gradient(#FF986B, #F94A4A);
     margin: 0;
     padding: 0;
+    font-size: 26px;
+}
+
+textarea:hover, input:hover, textarea:active, input:active, textarea:focus, input:focus {
+    outline:0px !important;
 }
 
 #logoMentalo{
@@ -15,12 +20,13 @@ body{
 }
 
 .containerAddPlayer{
-    width: 80%;
+    width: 70%;
     height: 400px;
     background-color: rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     border: 15px solid white;
     margin: 0 auto;
+    padding: 10%;
 }
 
 .inputAddPlayer{
@@ -28,20 +34,34 @@ body{
     width: 75%;
     height: 50px;
     background-color: transparent;
-    margin-left: 10%;
     border: none;
+    font-size: 56px;
+    font-family: Orangina;
+    color: white;
 }
 
 .inputAddPlayer::placeholder{
     font-family: Orangina;
-    font-size: 32px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 56px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.inputAddPlayer::after{
+    border: none;
 }
 
 .buttonAddPlayer{
     display: inline-block;
-    width: 15%;
-    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    background-color: #F94A4A;
+    border: none;
+    border-radius: 100%;
+    color: white;
+    font-size: 68px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
 }
 
 
