@@ -7,7 +7,41 @@ let data = {
         "Ceux qui n'ont pas le permis prennent 3 pénalités",
         "Plutôt football ou basket ? Votez en même temps, les minoritaires prennent 2 pénalités",
         "Le joueur le plus grand en taille distribue 4 pénalités",
-        "Tu as fait caca aujourd'hui ? Prends 3 pénalités"
+        "Tu as fait caca aujourd'hui ? Prends 3 pénalités",
+        "Ceux qui n'ont jamais embrassé quelqu'un du même sexe prennent 2 pénalités",
+        "Si tu n'as jamais vomi à cause de l'alcool c'est bien mais tu prends 3 pénalités",
+        "Ceux qui ont déjà conduit sous drogue/alcool prennent 2 pénalités bande de dangers",
+        "Prends une pénalité pour chaque tatouage que tu as",
+        "Les personnes qui ont déjà couché le premier soir prennent 3 pénalités",
+        "Citez tous votre artiste préféré, ceux qui répondent la même chose peuvent distribuer 4 pénalités",
+        "À tour de rôle citez une capitale, la personne qui répète ou ne trouve pas prend 4 pénalités",
+        "Ceux qui n'ont pas continué les études après le bac prennent 2 pénalités"
+    ],
+    "facile":[
+        "Fais un bisou sur la joue de ton voisin de droite",
+        "Raconte ce que tu as mangé à midi",
+        "Qui était ton premier bisou",
+        "Mets toi ",
+        "Raconte ",
+        "Qui"
+    ],
+    "moyen":[
+        "Embrasse le cou de ton voisin de gauche",
+        "Sens l'aisselle de la personne de ton choix",
+        "Quand était ton dernier rappport sexuel ?",
+        "Raconte nous une blague",
+        "Laisse le joueur de ton choix te mettre une petite claque",
+        "Mets toi pieds nus"
+    ],
+    "difficile":[
+        "Danse sans musique pendant 30 secondes",
+        "Crie par la fenêtre",
+        "Fais 20 pompes (sur les genoux si tu galères)",
+        "Appelle quelqu'un de ton répertoire",
+        "Enlève deux vêtements",
+        "Bois un shot de grenadine",
+        "Fais 30 squats",
+        "Va au coin pendant la prochaine partie"
     ]
 }
 
@@ -261,13 +295,13 @@ buttonNextQuestion.addEventListener(
             }
         }
         if(tenpenalties==true){
-
+            setChallenge()
         }
         else if(tenpenalties==false){
             pageResults.style.display="none"
             pageGame.style.display="flex"
             updateScore()
-
+            selectQuestion()
         }
 
     }
@@ -281,14 +315,90 @@ function updateScore(){
 }
 
 function setChallenge(){
-    
+    const pageChallenge = document.querySelector('.pageChallenge')
+    pageResults.style.display="none"
+    pageChallenge.style.display="flex"   
 }
 
+// CHANGER DE PERSONNE POUR LES CHALLENGES
+
+const buttonNextPerson = document.querySelector('.buttonNextPerson')
+let aquicestletour = 0
+
+buttonNextPerson.addEventListener(
+    'click',
+    ()=>{
+        if(aquicestletour==listeJoueur.length){
+           aquicestletour=0
+           console.log('retour au jeu')
+           nameJoueurChallenge.innerText="Alerte"
+           for(let i=0; i<listeJoueur.length; i++){
+                listeJoueur[i].points=0
+           }
+           const pageChallenge = document.querySelector('.pageChallenge').style.display="none"
+           pageGame.style.display="flex"
+           const imgBiere = document.querySelector('.firstChallenge img').src="images/beer.png"
+           const firstChallenge = document.querySelector('.firstChallenge h3').innerText="Gage boisson"
+           const secondChallenge = document.querySelector('.secondChallenge h3').innerText="Gage action"
+        }
+        else{
+            const nameJoueurChallenge = document.querySelector("#nameJoueurChallenge")
+            nameJoueurChallenge.innerText=listeJoueur[aquicestletour].nom
+
+            let coeff = 1
+            if(listeJoueur[aquicestletour].niveau==1){
+                coeff=0.5
+            }
+            else if(listeJoueur[aquicestletour].niveau==3){
+                coeff=1.5
+            }
+
+            // Si le jour est level 0, remplacer beer par action et mettre 2 actions du niveau de pénalités
+            if(listeJoueur[aquicestletour].niveau==0){
+                const imgBiere = document.querySelector('.firstChallenge img').src="images/challenge.png"
+                const firstChallenge = document.querySelector('.firstChallenge h3')
+                const secondChallenge = document.querySelector('.secondChallenge h3')
+                if(listeJoueur[aquicestletour].points<4){
+                    firstChallenge.innerText=data["facile"][Math.floor(Math.random() * (data["facile"].length - 0))]
+                    secondChallenge.innerText=data["facile"][Math.floor(Math.random() * (data["facile"].length - 0))]
+                }
+                else if(listeJoueur[aquicestletour].points<8){
+                    firstChallenge.innerText=data["moyen"][Math.floor(Math.random() * (data["moyen"].length - 0))]
+                    secondChallenge.innerText=data["facile"][Math.floor(Math.random() * (data["facile"].length - 0))]
+                }
+                else if(listeJoueur[aquicestletour].points>7){
+                    firstChallenge.innerText=data["difficile"][Math.floor(Math.random() * (data["difficile"].length - 0))]
+                    secondChallenge.innerText=data["facile"][Math.floor(Math.random() * (data["facile"].length - 0))]
+                }
+            }
+            else{
+                const firstChallenge = document.querySelector('.firstChallenge h3')
+                const secondChallenge = document.querySelector('.secondChallenge h3') 
+                firstChallenge.innerText="Bois "+ Math.floor((listeJoueur[aquicestletour].points)*coeff) +" gorgées"
+                if(listeJoueur[aquicestletour].points<4){
+                    secondChallenge.innerText=data["facile"][Math.floor(Math.random() * (data["facile"].length - 0))]
+                }
+                else if(listeJoueur[aquicestletour].points<8){
+                    secondChallenge.innerText=data["moyen"][Math.floor(Math.random() * (data["moyen"].length - 0))]
+                }
+                else if(listeJoueur[aquicestletour].points>7){
+                    secondChallenge.innerText=data["difficile"][Math.floor(Math.random() * (data["difficile"].length - 0))]
+                }
+            }
+            // Sinon, mettre défi boisson 
 
 
 
+            aquicestletour++
+        }
 
+    }
+)
 
-// Si un joueur atteint 10, mettre défis
+// 0-3 défi facile
+// 4-7 défi moyen
+// 7-10 Déi difficile
 
-
+// 1 bière : divise par 2
+// 2 bières : autant de gorgées que pénalités
+// 3 bières : x1.5 gorgées

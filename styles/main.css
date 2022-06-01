@@ -15,6 +15,19 @@ a{
     text-decoration: none;
 }
 
+h1{
+    font-size: 90px;
+    color: white;
+    font-family: Orangina;
+    text-align: center;
+}
+
+.btnText{
+    font-size: 60px;
+    color: #F94A4A;
+    font-family: Orangina;
+}
+
 #logoMentalo{
     display: block;
     width: 760px;
@@ -23,6 +36,7 @@ a{
 }
 
 /* Container Add Player */
+
 
 .containerAddPlayer{
     width: 50%;
@@ -148,12 +162,12 @@ a{
     justify-content: center;
     margin-bottom: 80px;
 }
-
+/* 
 .button1>h1{
     font-size: 60px;
     color: #F94A4A;
     font-family: Orangina;
-}
+} */
 
 /* Page de jeu */
 
@@ -183,12 +197,12 @@ a{
     cursor: pointer;
 }
 
-.pageGame>h1{
+/* .pageGame>h1{
     font-size: 90px;
     color: white;
     font-family: Orangina;
     text-align: center;
-}
+} */
 
 .question{
     color: white;
@@ -229,12 +243,12 @@ a{
     align-items: center;
 }
 
-.pageResults>h1{
+/* .pageResults>h1{
     font-size: 90px;
     color: white;
     font-family: Orangina;
     text-align: center;
-}
+} */
 
 /* CHANGE SCORES */
 
@@ -249,6 +263,58 @@ a{
 .rowScorePlayer input{
     width: 70px;
     height: 40px;
+    text-align: center;
+}
+
+/* CHALLENGES */
+
+.pageChallenge{
+    display: none;
+    width: 50%;
+    height: 700px;
+    margin: 100px auto;
+    transition: all ease 1s;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+.subTitleSoft{
+    color: white;
+    font-family: Poppins;
+    font-size: 32px;
+    text-align: center;
+}
+
+.defiContainer{
+    width: 80%;
+    margin: 0 auto 50px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.firstChallenge, .secondChallenge{
+    width: 250px;
+    height: 250px;
+    background-color: #FFFFFF15;
+    border: 5px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.firstChallenge img, .secondChallenge img{
+    width: 80px;
+    height: auto;
+}
+
+.firstChallenge h3, .secondChallenge h3{
+    font-size: 30px;
+    color: white;
+    font-family: Poppins;
     text-align: center;
 }
 

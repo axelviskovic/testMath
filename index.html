@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <div class="button1 buttonValidationPlayer"><h1>Lancer la partie</h1></div>
+        <div class="button1 buttonValidationPlayer"><h1 class="btnText">Lancer la partie</h1></div>
     </div>
 
 
@@ -43,7 +43,7 @@
       </div>
       <h1>Jeu</h1>
       <h5 class="question"></h5>
-      <div class="button1 buttonSeeResult"><h1>Continuer</h1></div>
+      <div class="button1 buttonSeeResult"><h1 class="btnText">Continuer</h1></div>
       <div class="listeScoreGame"></div>
     </div>
 
@@ -52,11 +52,26 @@
       <h1>Resultats</h1>
       <div class="containerChangeScore">
       </div>
-      <div class="button1 buttonNextQuestion"><h1>Continuer</h1></div>     
+      <div class="button1 buttonNextQuestion"><h1 class="btnText">Continuer</h1></div>     
     </div>
 
     <!-- Page des défis -->
-
+    <div class="pageChallenge">
+      <h1 id="nameJoueurChallenge">Alerte</h1>
+      <h2 class="subTitleSoft">Un des joueurs a atteint 10 pénalités ! À tour de rôle choisissez votre gage.</h2>
+      <div class="defiContainer">
+        <div class="firstChallenge">
+          <img src="images/beer.png">
+          <h3>Gage boisson</h3>
+        </div>
+        <h2 class="subTitleSoft">OU</h2>
+        <div class="secondChallenge">
+          <img src="images/challenge.png">
+          <h3>Gage action</h3>
+        </div>
+      </div>
+      <div class="button1 buttonNextPerson"><h1 class="btnText">Prochain Joueur</h1></div>     
+    </div>
 
     <script src="scripts/main.js"></script>
   </body>
