@@ -10,12 +10,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
   </head>
   <body>
-      <img src="images/logo.png" id="logoMentalo" alt="logo"/>
 
-    <div class="containerAddPlayer">
-      <input placeholder="Entrer un joueur" class="inputAddPlayer"></input>
-      <button class="buttonAddPlayer">+</button>
+    <!-- Page de séléction des joueurs -->
+    <div class="pagePlayerSelect">
+        <img src="images/logo.png" id="logoMentalo" alt="logo"/>
+
+        <div class="containerAddPlayer">
+          <input placeholder="Entrer un joueur" class="inputAddPlayer"></input>
+          <button class="buttonAddPlayer">+</button>
+          <div class="beerCountContainer">
+            <img id="firstDot" class="beerImg" src="images/beer.png"/>
+            <img id="secondDot" class="whiteDotImg" src="images/whiteDot.png"/>
+            <img id="thirdDot" class="whiteDotImg" src="images/whiteDot.png"/>
+          </div>
+        </div>
+
+        <div class="containerlistPlayer">
+          <div class="rowPlayerList">
+            <h2 class="subTitle">Joueurs</h2>
+            <h2 class="subTitle">Niveau</h2>
+          </div>
+        </div>
+
+        <div class="button1 buttonValidationPlayer"><h1>Lancer la partie</h1></div>
     </div>
+
+
+    <!-- Page du jeu -->
+    <div class="pageGame">
+      <div class="navBtn">
+        <img src="images/replay.png" id="replay">
+      </div>
+      <h1>Jeu</h1>
+      <h5 class="question"></h5>
+      <div class="button1 buttonSeeResult"><h1>Continuer</h1></div>
+      <div class="listeScoreGame"></div>
+    </div>
+
+    <!-- Page des résultats -->
+    <div class="pageResults">
+      <h1>Resultats</h1>
+      <div class="containerChangeScore"></div>
+      <div class="button1 buttonNextQuestion"><h1>Continuer</h1></div>     
+    </div>
+
+
+
     <script src="scripts/main.js"></script>
   </body>
 </html>

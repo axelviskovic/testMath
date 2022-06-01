@@ -1,7 +1,6 @@
 body{
     width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 1000px;
     background: linear-gradient(#FF986B, #F94A4A);
     margin: 0;
     padding: 0;
@@ -12,6 +11,10 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
     outline:0px !important;
 }
 
+a{
+    text-decoration: none;
+}
+
 #logoMentalo{
     display: block;
     width: 760px;
@@ -19,25 +22,29 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
     margin: 20px auto;
 }
 
+/* Container Add Player */
+
 .containerAddPlayer{
-    width: 70%;
-    height: 400px;
+    width: 50%;
+    height: 300px;
     background-color: rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     border: 15px solid white;
     margin: 0 auto;
-    padding: 10%;
+    padding: 4%;
 }
 
 .inputAddPlayer{
     display: inline-block;
     width: 75%;
-    height: 50px;
+    height: 100px;
     background-color: transparent;
     border: none;
     font-size: 56px;
     font-family: Orangina;
     color: white;
+    text-align: center;
+    margin-left: 5%;
 }
 
 .inputAddPlayer::placeholder{
@@ -62,11 +69,182 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
     font-weight: 700;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
+
+/* Beer Count */
+
+.beerCountContainer{
+    width: 50%;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.beerCountContainer .beerImg{
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+}
+
+.beerCountContainer .whiteDotImg{
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
+
+
+/* List player */
+
+.containerlistPlayer{
+    width: 50%;
+    min-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.subTitle{
+    display: inline;
+    width: 50%;
+    text-align: center;
+    font-size: 42px;
+    color: white;
+    font-family: Orangina;
+}
+
+
+.rowPlayerList{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.subTitlePlayer{
+    text-align: center;
+    font-size: 36px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.button1{
+    width : 50%;
+    height: 200px;
+    margin: 0 auto;
+    background-color: white;
+    border: 10px solid #FF986B;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.button1>h1{
+    font-size: 60px;
+    color: #F94A4A;
+    font-family: Orangina;
+}
+
+/* Page de jeu */
+
+.pageGame{
+    display: none;
+    width: 50%;
+    height: 700px;
+    margin: 0 auto;
+    opacity: 0;
+    transition: all ease 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px;
+    position: relative;
+}
+
+.navBtn{
+    position: absolute;
+    width: 60px;
+    height: 100px;
+    top : 0%;
+    right: 0%;
+}
+
+#replay{
+    width: 40px;
+    cursor: pointer;
+}
+
+.pageGame>h1{
+    font-size: 90px;
+    color: white;
+    font-family: Orangina;
+    text-align: center;
+}
+
+.question{
+    color: white;
+    font-family: 'Poppins';
+    font-size: 36px;
+    text-align: center;
+}
+
+.listeScoreGame{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.scoreJoueurs{
+    font-size: 24px;
+    color: white;
+    font-family: 'Poppins';
+    margin: 12px 0;
+}
+
+
+
+/* Page Résultats */
+
+.pageResults{
+    display: none;
+    width: 50%;
+    height: 700px;
+    margin: 0 auto;
+    opacity: 0;
+    transition: all ease 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px;   
+}
+
+.pageResults>h1{
+    font-size: 90px;
+    color: white;
+    font-family: Orangina;
+    text-align: center;
+}
+
+
 
 
 
 @font-face {
     font-family: Orangina;
-    src: url(Orangina-Demo.ttf) format("truetype");
+    src: url(../fonts/Orangina-Demo.ttf) format("truetype");
 }
