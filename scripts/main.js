@@ -15,15 +15,16 @@ let data = {
         "Les personnes qui ont déjà couché le premier soir prennent 3 pénalités",
         "Citez tous votre artiste préféré, ceux qui répondent la même chose peuvent distribuer 4 pénalités",
         "À tour de rôle citez une capitale, la personne qui répète ou ne trouve pas prend 4 pénalités",
-        "Ceux qui n'ont pas continué les études après le bac prennent 2 pénalités"
+        "Ceux qui n'ont pas continué les études après le bac prennent 2 pénalités",
+        "Ceux qui sont ensemble en cours prennent 3 pénalités"
     ],
     "facile":[
         "Fais un bisou sur la joue de ton voisin de droite",
         "Raconte ce que tu as mangé à midi",
         "Qui était ton premier bisou",
-        "Mets toi ",
-        "Raconte ",
-        "Qui"
+        "Ferme les yeux pendant 1 minute",
+        "Mets toi sur les genoux de la personne de ton choix",
+        "Fais 3 pompes"
     ],
     "moyen":[
         "Embrasse le cou de ton voisin de gauche",
@@ -31,7 +32,10 @@ let data = {
         "Quand était ton dernier rappport sexuel ?",
         "Raconte nous une blague",
         "Laisse le joueur de ton choix te mettre une petite claque",
-        "Mets toi pieds nus"
+        "Mets toi pieds nus",
+        "Mets toi sur les genoux de la personne de ton choix",
+        "Combien as-tu eu de partenaires sexuels ?",
+        "Quelle est la personne la plus attirante ici ?"
     ],
     "difficile":[
         "Danse sans musique pendant 30 secondes",
@@ -41,6 +45,7 @@ let data = {
         "Enlève deux vêtements",
         "Bois un shot de grenadine",
         "Fais 30 squats",
+        "Danse un slow avec la personne à ta droite",
         "Va au coin pendant la prochaine partie"
     ]
 }
