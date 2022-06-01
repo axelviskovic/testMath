@@ -1,6 +1,6 @@
 body{
     width: 100vw;
-    min-height: 1000px;
+    min-height: 600px;
     background: linear-gradient(#FF986B, #F94A4A);
     margin: 0;
     padding: 0;
@@ -161,14 +161,12 @@ a{
     display: none;
     width: 50%;
     height: 700px;
-    margin: 0 auto;
+    margin: 100px auto;
     opacity: 0;
     transition: all ease 1s;
-    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin-top: 100px;
     position: relative;
 }
 
@@ -223,14 +221,12 @@ a{
     display: none;
     width: 50%;
     height: 700px;
-    margin: 0 auto;
+    margin: 100px auto;
     opacity: 0;
     transition: all ease 1s;
-    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin-top: 100px;   
 }
 
 .pageResults>h1{
@@ -240,6 +236,21 @@ a{
     text-align: center;
 }
 
+/* CHANGE SCORES */
+
+.rowScorePlayer{
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rowScorePlayer input{
+    width: 70px;
+    height: 40px;
+    text-align: center;
+}
 
 
 

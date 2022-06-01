@@ -164,6 +164,7 @@ const buttonValidationPlayer = document.querySelector('.buttonValidationPlayer')
 const pageGame = document.querySelector('.pageGame')
 const listeScoreGame = document.querySelector('.listeScoreGame')
 const scoreJoueurs = document.querySelector('.scoreJoueurs')
+const containerChangeScore = document.querySelector('.containerChangeScore')
 
 
 buttonValidationPlayer.addEventListener(
@@ -174,6 +175,7 @@ buttonValidationPlayer.addEventListener(
         pageGame.style.opacity="1"
         displayJoueur()
         selectQuestion()
+        changeScore()
     }
 )
 
@@ -183,6 +185,24 @@ function displayJoueur(){
         addPlayerScore.classList.add('scoreJoueurs')
         addPlayerScore.innerText= listeJoueur[i].nom + " : " + listeJoueur[i].points +" points"
         listeScoreGame.appendChild(addPlayerScore)
+    }
+}
+
+function changeScore(){
+    for(let i=0;i<listeJoueur.length; i++){
+       let changePlayerScore = document.createElement("div")
+       changePlayerScore.classList.add('rowScorePlayer') 
+       let changePlayerScoreName = document.createElement('h2')
+       changePlayerScoreName.classList.add('subTitle')
+       changePlayerScoreName.innerText= listeJoueur[i].nom
+       let changePlayerScoreInput = document.createElement('input')
+       changePlayerScoreInput.setAttribute("type", "number")
+       changePlayerScoreInput.setAttribute("min", "0")
+       changePlayerScoreInput.setAttribute("max", "10")
+       changePlayerScoreInput.classList.add('selectValue')
+       changePlayerScore.appendChild(changePlayerScoreName)
+       changePlayerScore.appendChild(changePlayerScoreInput)
+       containerChangeScore.appendChild(changePlayerScore)       
     }
 }
 
@@ -219,12 +239,50 @@ buttonSeeResult.addEventListener(
         pageGame.style.display="none"
         pageResults.style.display="flex"
         pageResults.style.opacity="1"
+        
     }
 )
 
 
-// Changement des scores
+// Retour au jeu et Changement des scores
 
+const buttonNextQuestion = document.querySelector('.buttonNextQuestion')
+let tenpenalties = false
+
+buttonNextQuestion.addEventListener(
+    'click',
+    ()=>{
+        const selectValue = document.querySelectorAll('.selectValue')
+
+        for(let i=0;i<listeJoueur.length; i++){
+            listeJoueur[i].points=selectValue[i].value
+            if(listeJoueur[i].points==10){
+                tenpenalties=true
+            }
+        }
+        if(tenpenalties==true){
+
+        }
+        else if(tenpenalties==false){
+            pageResults.style.display="none"
+            pageGame.style.display="flex"
+            updateScore()
+
+        }
+
+    }
+)
+
+function updateScore(){
+    const scoreJoueursList = document.querySelectorAll('.scoreJoueurs')
+    for(let i=0; i<scoreJoueursList.length; i++){
+        scoreJoueursList[i].innerText= listeJoueur[i].nom + " : " + listeJoueur[i].points +" points"
+    }
+}
+
+function setChallenge(){
+    
+}
 
 
 
