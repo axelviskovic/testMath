@@ -60,7 +60,15 @@ let data = {
         "Ceux qui postent du contenu sur Youtube ou Tiktok prennent 2 pénalités",
         "Ceux qui ont quitté la France cette année prennent 3 pénalités",
         "Si tu as déjà pris de la drogue dure prend 3 pénalités",
-        "Si tu as peur en avion prend 2 pénalités"
+        "Si tu as peur en avion prend 2 pénalités",
+        "Plutôt Rap fr ou Rap us ? Les minoritaires prennent 2 pénalités",
+        "À tour de rôle citez une ville qui commence par une voyelle, la personne qui ne trouve pas prend 3 pénalités",
+        "Si tu es percé tu peux distribuer 2 pénalités",
+        "Si tu penses souvent à ton ex tu prends 2 pénalités",
+        "Les détenteurs d'un skateboard prennent 3 pénaliés",
+        "Ceux qui ont déjà fini en GAV prennent 3 pénalités",
+        "Si tu connais la signification de BBC tu prends 2 pénalités",
+        "À tour de rôle citez un chanteur décédé. La personne qui ne trouve pas prend 3 pénalités"
 
     ],
     "facile":[
