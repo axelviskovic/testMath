@@ -14,7 +14,7 @@ let data = {
         "Prends une pénalité pour chaque tatouage que tu as",
         "Les personnes qui ont déjà couché le premier soir prennent 3 pénalités",
         "Citez tous votre artiste préféré, ceux qui répondent la même chose peuvent distribuer 4 pénalités",
-        "À tour de rôle citez une capitale, la personne qui répète ou ne trouve pas prend 4 pénalités",
+        "À tour de rôle citez une capitale, la personne qui répète ou ne trouve pas prend 3 pénalités",
         "Ceux qui n'ont pas continué les études après le bac prennent 2 pénalités",
         "Ceux qui sont ensemble en cours prennent 3 pénalités",
         "À tour de rôle citez le nom de la famille de votre voisin de droite, 2 pénalités en cas d'échec",
@@ -40,7 +40,27 @@ let data = {
         "Si tu es venu en voiture distribue 3 pénalités",
         "La personne qui organise la soirée distribue 5 pénalités",
         "Ceux qui savent faire l'équilibre distribuent 2 pénalités",
-        "La première personne à enlever son t-shirt distribue 4 pénalités"
+        "La première personne à enlever son t-shirt distribue 4 pénalités",
+        "La première personne à envoyer un message à sa mère distribue 3 pénalités",
+        "À tour de rôle faites un mime, la personne qui devine distribue 2 pénalités",
+        "Si tu chausses en dessous de 42 tu prends 2 pénalités",
+        "Si t'as déjà trompé tu prends 5 pénalités. Ordure.",
+        "Si tu as déjà flirté avec quelqu'un ici prend 3 pénalités",
+        "Ceux qui fument de la drogue prennent 3 pénalités",
+        "Parc Astérix ou Disneyland ? Les minoritaires prennent 2 pénalités",
+        "À tour de rôle citez un instrument de musique, la personne qui ne trouve pas prend 3 pénalités",
+        "La personne qui a le plus petit score prend 3 pénalités",
+        "La personne qui a le plus haut score distribue 3 pénalités à 2 personnes",
+        "Si tu as un animal de compagnie donne son nom et prend 1 pénalité. Si tu en as au moins 2 Prends en 2",
+        "Ceux qui sont nés avant 2000 prennent 2 pénalités",
+        "Ceux qui connaissent la date de naissance d'au moins un de leurs voisins distribuent 3 pénalités",
+        "Si tu as écouté Voyageur cette semaine tu es bg et tu distribues 3 pénalités",
+        "Ceux qui ont un compte Twitter prennent 1 pénalité",
+        "Ceux qui sont actifs sur TikTok prennent 2 pénalités",
+        "Ceux qui postent du contenu sur Youtube ou Tiktok prennent 2 pénalités",
+        "Ceux qui ont quitté la France cette année prennent 3 pénalités",
+        "Si tu as déjà pris de la drogue dure prend 3 pénalités",
+        "Si tu as peur en avion prend 2 pénalités"
 
     ],
     "facile":[
@@ -395,7 +415,7 @@ buttonNextPerson.addEventListener(
         }
         else{
             const nameJoueurChallenge = document.querySelector("#nameJoueurChallenge")
-            nameJoueurChallenge.innerText=listeJoueur[aquicestletour].nom
+            nameJoueurChallenge.innerText=listeJoueur[aquicestletour].nom+" - "+listeJoueur[aquicestletour].points+" pts"
 
             let coeff = 1
             if(listeJoueur[aquicestletour].niveau==1){
