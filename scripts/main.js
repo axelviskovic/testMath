@@ -3,7 +3,7 @@
 
 let data = {
     "questions":[
-        "Ceci est la première question du jeu, si vous tombez dessus tout le monde prend 5 pénalités",
+        "Ceci est la première question du jeu, si vous tombez dessus tout le monde prend 4 pénalités",
         "Ceux qui n'ont pas le permis prennent 3 pénalités",
         "Plutôt football ou basket ? Votez en même temps, les minoritaires prennent 2 pénalités",
         "Le joueur le plus grand en taille distribue 4 pénalités",
@@ -16,7 +16,32 @@ let data = {
         "Citez tous votre artiste préféré, ceux qui répondent la même chose peuvent distribuer 4 pénalités",
         "À tour de rôle citez une capitale, la personne qui répète ou ne trouve pas prend 4 pénalités",
         "Ceux qui n'ont pas continué les études après le bac prennent 2 pénalités",
-        "Ceux qui sont ensemble en cours prennent 3 pénalités"
+        "Ceux qui sont ensemble en cours prennent 3 pénalités",
+        "À tour de rôle citez le nom de la famille de votre voisin de droite, 2 pénalités en cas d'échec",
+        "Plutôt Damso ou Ninho ? Votez et les minoritaires prennent 3 pénalités",
+        "Si tu t'es déjà fait arrêter par la police prends 4 pénalités",
+        "Si tu t'appelles Axel tu peux distribuer 6 pénalités :)",
+        "Les personnes qui pourraient embrasser leur voisin de droite distribuent 4 pénalités",
+        "Ceux qui ne sont jamais allés en concert prennent 3 pénalités",
+        "Les fumeurs prennent 2 pénalités",
+        "Le premier à dire le nom de la musique qui passe distribue 2 pénalités (sauf celui qui lit)",
+        "À tour de rôle citez un personnage des Simpson, la personne qui répète ou ne trouve pas prend 3 pénalités",
+        "Plutôt Rick et Morty ou Les Simpson ? Les minoritaires prennent 3 pénalités",
+        "Ceux qui n'ont vu aucun Star Wars prennent 4 pénalités. Cheh",
+        "Les gens célibataires prennent 2 pénalités",
+        "Les personnes en couple prennent 3 pénalités",
+        "Plutôt Mister V ou Jonathan Cohen ? Les minoritaires prennent 3 pénalités",
+        "Plutôt partir en Italie ou en Espagne ? Les minoritaires prennent 3 pénalités",
+        "La personne qui lit met une musique, la personne qui trouve le titre distribue 4 pénalités",
+        "Plutôt vodka ou rhum ? Les minoritaires prennent 2 pénalités",
+        "À tour de rôle citez un artiste d'ile de france, la personne qui ne trouve pas prend 3 pénalités",
+        "À tour de rôle citez votre film préféré, ceux qui ont le même peuvent distribuer 2 pénalités chacun",
+        "Si tu es venu en moto tu peux distribuer 2 pénalités",
+        "Si tu es venu en voiture distribue 3 pénalités",
+        "La personne qui organise la soirée distribue 5 pénalités",
+        "Ceux qui savent faire l'équilibre distribuent 2 pénalités",
+        "La première personne à enlever son t-shirt distribue 4 pénalités"
+
     ],
     "facile":[
         "Fais un bisou sur la joue de ton voisin de droite",
@@ -24,7 +49,11 @@ let data = {
         "Qui était ton premier bisou",
         "Ferme les yeux pendant 1 minute",
         "Mets toi sur les genoux de la personne de ton choix",
-        "Fais 3 pompes"
+        "Fais 3 pompes",
+        "Chante une musique que les autres devront reconnaître",
+        "Quel est ta destination de rêve ?",
+        "Qui ici est le mieux habillé ?",
+        "Avec qui partirais-tu en vacances ici ?"
     ],
     "moyen":[
         "Embrasse le cou de ton voisin de gauche",
@@ -35,7 +64,12 @@ let data = {
         "Mets toi pieds nus",
         "Mets toi sur les genoux de la personne de ton choix",
         "Combien as-tu eu de partenaires sexuels ?",
-        "Quelle est la personne la plus attirante ici ?"
+        "Quelle est la personne la plus attirante ici ?",
+        "Tourne 10 fois sur toi-même et marche",
+        "Imite un joueur présent",
+        "Échange de haut avec le joueur de ton choix",
+        "Qui ici est le plus sexy ?",
+        "Jusqu'au prochain tour finis toutes tes phrases par : je suce"
     ],
     "difficile":[
         "Danse sans musique pendant 30 secondes",
@@ -46,7 +80,17 @@ let data = {
         "Bois un shot de grenadine",
         "Fais 30 squats",
         "Danse un slow avec la personne à ta droite",
-        "Va au coin pendant la prochaine partie"
+        "Va au coin pendant la prochaine partie",
+        "Dis nous avec qui ici tu pourrais sortir",
+        "Raconte une anecdote gênante sur toi",
+        "Raconte quelque chose que personne ici ne sait",
+        "Ne fume pas jusqu'à la fin de la partie",
+        "Envoie un message à ton crush",
+        "Poste sur les réseaux une blague nulle",
+        "Envoie à tes parents le mot : caca",
+        "Quelle est la personne la moins attirante ici ?",
+        "Jusqu'à la fin de la partie parle en chuchotant"
+        
     ]
 }
 
@@ -301,6 +345,7 @@ buttonNextQuestion.addEventListener(
         }
         if(tenpenalties==true){
             setChallenge()
+            tenpenalties=false
         }
         else if(tenpenalties==false){
             pageResults.style.display="none"
@@ -335,11 +380,13 @@ buttonNextPerson.addEventListener(
     ()=>{
         if(aquicestletour==listeJoueur.length){
            aquicestletour=0
-           console.log('retour au jeu')
            nameJoueurChallenge.innerText="Alerte"
+           const selectValue = document.querySelectorAll('.selectValue')
            for(let i=0; i<listeJoueur.length; i++){
                 listeJoueur[i].points=0
+                selectValue[i].value=0
            }
+           updateScore()
            const pageChallenge = document.querySelector('.pageChallenge').style.display="none"
            pageGame.style.display="flex"
            const imgBiere = document.querySelector('.firstChallenge img').src="images/beer.png"
@@ -390,7 +437,6 @@ buttonNextPerson.addEventListener(
                     secondChallenge.innerText=data["difficile"][Math.floor(Math.random() * (data["difficile"].length - 0))]
                 }
             }
-            // Sinon, mettre défi boisson 
 
 
 
@@ -400,10 +446,3 @@ buttonNextPerson.addEventListener(
     }
 )
 
-// 0-3 défi facile
-// 4-7 défi moyen
-// 7-10 Déi difficile
-
-// 1 bière : divise par 2
-// 2 bières : autant de gorgées que pénalités
-// 3 bières : x1.5 gorgées
