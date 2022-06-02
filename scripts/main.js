@@ -248,10 +248,18 @@ let listeJoueur= []
 buttonAddPlayer.addEventListener(
     'click',
     ()=>{
-        let joueur1 = new Joueur
-        inputAddPlayer.value=""
-        emptyBeer()
-        listeJoueur.push(joueur1)
+        if(inputAddPlayer.value==''){
+            inputAddPlayer.classList.add('noNameInput')
+        }
+        else{
+            let joueur1 = new Joueur
+            inputAddPlayer.value=""
+            emptyBeer()
+            listeJoueur.push(joueur1)
+            inputAddPlayer.classList.remove('noNameInput')
+            
+       }
+        
     }
 )
 
@@ -260,7 +268,6 @@ class Joueur {
         this.nom = inputAddPlayer.value
         this.niveau = numberBeer
         this.points = 0
-        
         
 
         let newDiv = document.createElement("div")
@@ -409,6 +416,7 @@ buttonNextQuestion.addEventListener(
             updateScore()
             selectQuestion()
         }
+
 
     }
 )

@@ -58,9 +58,11 @@ h1{
     font-family: Orangina;
     color: white;
     text-align: center;
-    margin-left: 5%;
+    margin: 0 5%;
     transition: all .4s ease;
     cursor: pointer;
+    border-radius: 10px;
+    border: 5px solid transparent;
 }
 
 .inputAddPlayer:hover{
@@ -76,6 +78,31 @@ h1{
 
 .inputAddPlayer::after{
     border: none;
+}
+
+.noNameInput{
+    border: 5px solid #F94A4A60;
+    box-shadow: 0px 0px 20px #F94A4A ;
+    animation-name: noName;
+    animation-duration: .3s;
+}
+
+@keyframes noName {
+    0%{
+        margin-left: 5%;
+    }
+    25%{
+        margin-left: 6%;
+    }
+    50%{
+        margin-left: 5%;
+    }
+    75%{
+        margin-left: 6%;
+    }
+    100%{
+        margin-left: 5%;
+    }
 }
 
 .buttonAddPlayer{
@@ -306,6 +333,10 @@ h1{
     align-items: center; 
 }
 
+#nameJoueurChallenge{
+    font-family: Fredo;
+}
+
 .subTitleSoft{
     color: white;
     font-family: Poppins;
@@ -351,4 +382,8 @@ h1{
 @font-face {
     font-family: Orangina;
     src: url(../fonts/Orangina-Demo.ttf) format("truetype");
+}
+@font-face {
+    font-family: Fredo;
+    src: url(../fonts/FredokaOne-Regular.ttf) format("truetype");
 }
