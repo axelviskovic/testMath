@@ -41,9 +41,9 @@ let data = {
         "La première personne à enlever son t-shirt distribue 4 pénalités",
         "La première personne à envoyer un message à sa mère distribue 3 pénalités",
         "Si tu chausses en dessous de 42 tu prends 2 pénalités",
-        "Si t'as déjà trompé tu prends 3 pénalités. Ordure.",
+        "Si t'as déjà trompé tu prends 3 pénalités.",
         "Si tu as déjà flirté avec quelqu'un ici prend 3 pénalités",
-        "Ceux qui fument de la drogue prennent 3 pénalités",
+        "Ceux qui fument de la drogue à cette soirée prennent 3 pénalités",
         "Parc Astérix ou Disneyland ? Les minoritaires prennent 2 pénalités",
         "À tour de rôle citez un instrument de musique, la personne qui ne trouve pas prend 3 pénalités",
         "La personne qui a le plus petit score prend 3 pénalités",
@@ -68,7 +68,8 @@ let data = {
         "Votez pour la personne qui a le plus beau prénom et qui prendra 2 pénalités",
         "Votez pour la personne la plus belle qui prendra 3 pénalités",
         "Si tu as un grand frère ou une grande soeur prend 2 pénalités",
-        "À tour de rôle dites la personne la plus connue que vous avez vue dans votre vie, la personne qui a la meilleure anecdote distribue 4 pénalités"
+        "À tour de rôle dites la personne la plus connue que vous avez vue dans votre vie, la personne qui a la meilleure anecdote distribue 4 pénalités",
+        "Plutôt Transformers ou Avengers ? Les minoritaires prennent 2 pénalités",
 
     ],
     "question":[
@@ -83,6 +84,43 @@ let data = {
         "Quel est ton artiste favori ? Ceux qui n'aiment pas prennent 2 pénalités",
         "Fais un mime, la personne qui devine distribue 3 pénalités",
         "Quel est ton record de pompes ? Si ça dépasse 50 t'es chaud tu peux distribuer 5 pénalités",
+        "Où es tu allé pour tes vacances les plus récentes ? Ceux qui y sont déjà allé prennent 2 pénalités",
+        "Si tu sais jouer un instrument de musique distribue 3 pénalités",
+        "Pose une question sur toi, la première personne à donner la bonne réponse distribue 2 pénalités",
+        "Propose un thème, à tour de rôle citez quelque chose de ce thème. La personne qui répète ou ne trouve pas prend 3 pénalités. (Exemples : séries, rappeurs, villes...)",
+        "Donne nous tes 3 artistes préférés, les autres joueurs votent pour décider si c'est bien ou si c'est catastrophique. S'ils n'aiment pas tu prends 2 pénalités",
+        "Appelle quelqu'un au hasard dans ton répértoire ou prends 3 pénalités",
+        "Jusqu'à la fin de la manche tu devras terminer toutes tes phrases par \"N'est-il pas\". Un oubli = une pénalité",
+        "Ferme les yeux jusqu'à la fin de la manche ou prends 2 pénalités",
+        "Donne une qualité pour chaque joueur",
+        "Qui s'habille le mieux ici ? Cette personne distribuera 3 pénalités",
+        "Donne une pénalité à tous les joueurs qui sont plus grands que toi",
+        "Dis nous ce que tu penses de la personne à ta droite ou prends 2 pénalités",
+        "Qu'est ce que les autres joueurs ne savent pas sur toi ? 3 pénalités si tu ne réponds pas",
+        "Si tu écoutes OTXO et/ou UNF, tu peux distribuer 4 pénalités",
+        "Si tu pouvais ressusciter un artiste décédé qui serait-ce ? Ceux qui pensent pareil distribuent 1 pénalité.",
+        "Fais une galipette ou prends 2 pénalités",
+        "As-tu déjà passé 3 jours sans te laver ? Si oui prends 2 pénalités gros puant va",
+        "Quel est l'artiste que tu aimes le moins ? Ceux qui écoutent souvent prennent 1 pénalité",
+        "Distribue 1 pénalité pour chaque partenaire sexuel que tu as eu depuis 1 an",
+        "Plutôt prendre un repas avec ton ex ou avec Eric Zemmour ?",
+        "Raconte ton dernier rapport sexuel ou prends 3 pénalités",
+        "CHANCE : Tu peux te retirer 2 pénalités",
+        "CHANCE : Tu peux échanger ton score avec le joueur de ton choix",
+        "CHANCE : Tu es un sacré veinard qui peut remettre son compteur de pénalités à 0 !",
+        "MALCHANCE : Double ton nombre de pénalités",
+        "MALCHANCE : Prends 2 pénalités",
+        "MALCHANCE : Tu as vraiment pas de chance, tu prends 5 pénalités",
+        "Qui es la personne la plus musclée selon toi ? The Rock prendra 3 pénalités",
+        "En quelle année le mur de Berlin a-t-il été détruit ? 2 pénalités si tu te trompes",
+        "Quelle est ta position sexuelle préférée ? Si tu la mimes avec le joueur de ton choix tu peux distribuer 4 pénalités",
+        "Quelle est ta catégorie porno préférée ? 3 pénalités si tu ne réponds pas",
+        "Distribue 1 pénalité à tous les joueurs chez qui tu as déjà dormi",
+        "Si tu peux citer 4 beatmakers français distribue 2 pénalités, sinon prends les",
+        "Quel joueur est le mieux foutu ici ? Il prendra 2 pénalités, mais tu les prends si tu ne réponds pas",
+        "Qui est la personne la plus intelligente ici ? Cette personne pourra distribuer 2 pénalités à 2 joueurs de son choix",
+        "As-tu déjà utilisé un sextoy ? Prends 2 pénalités si c'est le cas",
+        "Prends une pénalité pour chaque drogue illégale que tu as testée",
 
     ],
     "facile":[
@@ -243,6 +281,7 @@ thirdDot.addEventListener(
 const buttonAddPlayer = document.querySelector('.buttonAddPlayer')
 const inputAddPlayer = document.querySelector('.inputAddPlayer')
 const containerlistPlayer = document.querySelector('.containerlistPlayer')
+const settingsContainer = document.querySelector('.settingsContainer')
 let listeJoueur= []
 
 buttonAddPlayer.addEventListener(
@@ -280,11 +319,14 @@ class Joueur {
         let newLevel = document.createElement("img")
         newLevel.src = "images/level" + numberBeer + ".png"
 
-
+        // let btnMoins = document.createElement('div')
+        // btnMoins.innerText="-"
+        // btnMoins.classList.add('btnMinus')
 
         newDiv.appendChild(newPlayer)
         newDiv.appendChild(newLevel)
         containerlistPlayer.appendChild(newDiv)
+        // settingsContainer.appendChild(newDiv)
 
     }
 }

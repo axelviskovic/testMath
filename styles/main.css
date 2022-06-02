@@ -5,6 +5,7 @@ body{
     margin: 0;
     padding: 0;
     font-size: 26px;
+    position: relative;
 }
 
 textarea:hover, input:hover, textarea:active, input:active, textarea:focus, input:focus {
@@ -376,6 +377,28 @@ h1{
     text-align: center;
 }
 
+
+/* PARAMETRES */
+
+.settingsContainer{
+    position: absolute;
+    width: 50%;
+    min-height: 500px;
+    border: 10px solid #7a7a7a;
+    border-radius: 20px;
+    top : 10%;
+    left: 25%;
+    background-color: #343434;
+}
+
+.btnMinus, .btnMore{
+    width: 30px;
+    height: 30px;
+    background-color: #FF986B;
+    border-radius: 100%;
+    text-align: center;
+    cursor: pointer;
+}
 
 
 
