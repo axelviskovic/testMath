@@ -59,6 +59,13 @@ h1{
     color: white;
     text-align: center;
     margin-left: 5%;
+    transition: all .4s ease;
+    cursor: pointer;
+}
+
+.inputAddPlayer:hover{
+    box-shadow: 0 0 10px #00000020;
+    border-radius: 20px;
 }
 
 .inputAddPlayer::placeholder{
@@ -84,6 +91,11 @@ h1{
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     text-align: center;
+    transition: all .2s ease;
+}
+
+.buttonAddPlayer:hover{
+    transform: rotate(90deg);
 }
 
 /* Beer Count */
@@ -161,13 +173,13 @@ h1{
     align-items: center;
     justify-content: center;
     margin-bottom: 80px;
+    transition: all .4s ease;
 }
-/* 
-.button1>h1{
-    font-size: 60px;
-    color: #F94A4A;
-    font-family: Orangina;
-} */
+
+.button1:hover{ 
+    background-color: #ececec;
+    width: 52%;
+}
 
 /* Page de jeu */
 
@@ -209,6 +221,21 @@ h1{
     font-family: 'Poppins';
     font-size: 36px;
     text-align: center;
+}
+
+.questionAnimation{
+    animation-name: swish;
+    animation-duration: .4s;
+}
+
+@keyframes swish{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        margin-left: 0;
+    }
 }
 
 .listeScoreGame{

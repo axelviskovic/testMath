@@ -2,24 +2,23 @@
 
 
 let data = {
-    "questions":[
+    "jeu":[
         "Ceci est la première question du jeu, si vous tombez dessus tout le monde prend 4 pénalités",
         "Ceux qui n'ont pas le permis prennent 3 pénalités",
         "Plutôt football ou basket ? Votez en même temps, les minoritaires prennent 2 pénalités",
         "Le joueur le plus grand en taille distribue 4 pénalités",
-        "Tu as fait caca aujourd'hui ? Prends 3 pénalités",
+        "Tu as fait caca aujourd'hui ? Prends 1 pénalités",
         "Ceux qui n'ont jamais embrassé quelqu'un du même sexe prennent 2 pénalités",
         "Si tu n'as jamais vomi à cause de l'alcool c'est bien mais tu prends 3 pénalités",
         "Ceux qui ont déjà conduit sous drogue/alcool prennent 2 pénalités bande de dangers",
         "Prends une pénalité pour chaque tatouage que tu as",
-        "Les personnes qui ont déjà couché le premier soir prennent 3 pénalités",
-        "Citez tous votre artiste préféré, ceux qui répondent la même chose peuvent distribuer 4 pénalités",
+        "Les personnes qui ont déjà couché le premier soir prennent 2 pénalités",
         "À tour de rôle citez une capitale, la personne qui répète ou ne trouve pas prend 3 pénalités",
         "Ceux qui n'ont pas continué les études après le bac prennent 2 pénalités",
         "Ceux qui sont ensemble en cours prennent 3 pénalités",
-        "À tour de rôle citez le nom de la famille de votre voisin de droite, 2 pénalités en cas d'échec",
+        "À tour de rôle épelez le nom de la famille de votre voisin de droite, 2 pénalités en cas d'échec",
         "Plutôt Damso ou Ninho ? Votez et les minoritaires prennent 3 pénalités",
-        "Si tu t'es déjà fait arrêter par la police prends 4 pénalités",
+        "Si tu t'es déjà fait arrêter ou contrôler par la police prends 2 pénalités",
         "Si tu t'appelles Axel tu peux distribuer 6 pénalités :)",
         "Les personnes qui pourraient embrasser leur voisin de droite distribuent 4 pénalités",
         "Ceux qui ne sont jamais allés en concert prennent 3 pénalités",
@@ -27,24 +26,22 @@ let data = {
         "Le premier à dire le nom de la musique qui passe distribue 2 pénalités (sauf celui qui lit)",
         "À tour de rôle citez un personnage des Simpson, la personne qui répète ou ne trouve pas prend 3 pénalités",
         "Plutôt Rick et Morty ou Les Simpson ? Les minoritaires prennent 3 pénalités",
-        "Ceux qui n'ont vu aucun Star Wars prennent 4 pénalités. Cheh",
+        "Ceux qui n'ont vu aucun Star Wars prennent 3 pénalités. Cheh",
         "Les gens célibataires prennent 2 pénalités",
         "Les personnes en couple prennent 3 pénalités",
         "Plutôt Mister V ou Jonathan Cohen ? Les minoritaires prennent 3 pénalités",
         "Plutôt partir en Italie ou en Espagne ? Les minoritaires prennent 3 pénalités",
         "La personne qui lit met une musique, la personne qui trouve le titre distribue 4 pénalités",
         "Plutôt vodka ou rhum ? Les minoritaires prennent 2 pénalités",
-        "À tour de rôle citez un artiste d'ile de france, la personne qui ne trouve pas prend 3 pénalités",
-        "À tour de rôle citez votre film préféré, ceux qui ont le même peuvent distribuer 2 pénalités chacun",
+        "À tour de rôle citez un rappeur d'ile de france, la personne qui ne trouve pas prend 3 pénalités",
         "Si tu es venu en moto tu peux distribuer 2 pénalités",
         "Si tu es venu en voiture distribue 3 pénalités",
         "La personne qui organise la soirée distribue 5 pénalités",
-        "Ceux qui savent faire l'équilibre distribuent 2 pénalités",
+        "Ceux qui savent faire l'équilibre distribuent 2 pénalités. 2 de plus si il y a la preuve en direct",
         "La première personne à enlever son t-shirt distribue 4 pénalités",
         "La première personne à envoyer un message à sa mère distribue 3 pénalités",
-        "À tour de rôle faites un mime, la personne qui devine distribue 2 pénalités",
         "Si tu chausses en dessous de 42 tu prends 2 pénalités",
-        "Si t'as déjà trompé tu prends 5 pénalités. Ordure.",
+        "Si t'as déjà trompé tu prends 3 pénalités. Ordure.",
         "Si tu as déjà flirté avec quelqu'un ici prend 3 pénalités",
         "Ceux qui fument de la drogue prennent 3 pénalités",
         "Parc Astérix ou Disneyland ? Les minoritaires prennent 2 pénalités",
@@ -53,14 +50,13 @@ let data = {
         "La personne qui a le plus haut score distribue 3 pénalités à 2 personnes",
         "Si tu as un animal de compagnie donne son nom et prend 1 pénalité. Si tu en as au moins 2 Prends en 2",
         "Ceux qui sont nés avant 2000 prennent 2 pénalités",
-        "Ceux qui connaissent la date de naissance d'au moins un de leurs voisins distribuent 3 pénalités",
+        "Ceux qui connaissent la date de naissance d'au moins un de leurs voisins distribuent 2 pénalités",
         "Si tu as écouté Voyageur cette semaine tu es bg et tu distribues 3 pénalités",
         "Ceux qui ont un compte Twitter prennent 1 pénalité",
         "Ceux qui sont actifs sur TikTok prennent 2 pénalités",
-        "Ceux qui postent du contenu sur Youtube ou Tiktok prennent 2 pénalités",
+        "Ceux qui postent du contenu sur Youtube ou Tiktok distribuent 2 pénalités",
         "Ceux qui ont quitté la France cette année prennent 3 pénalités",
         "Si tu as déjà pris de la drogue dure prend 3 pénalités",
-        "Si tu as peur en avion prend 2 pénalités",
         "Plutôt Rap fr ou Rap us ? Les minoritaires prennent 2 pénalités",
         "À tour de rôle citez une ville qui commence par une voyelle, la personne qui ne trouve pas prend 3 pénalités",
         "Si tu es percé tu peux distribuer 2 pénalités",
@@ -68,7 +64,25 @@ let data = {
         "Les détenteurs d'un skateboard prennent 3 pénaliés",
         "Ceux qui ont déjà fini en GAV prennent 3 pénalités",
         "Si tu connais la signification de BBC tu prends 2 pénalités",
-        "À tour de rôle citez un chanteur décédé. La personne qui ne trouve pas prend 3 pénalités"
+        "À tour de rôle citez un chanteur décédé. La personne qui ne trouve pas prend 3 pénalités",
+        "Votez pour la personne qui a le plus beau prénom et qui prendra 2 pénalités",
+        "Votez pour la personne la plus belle qui prendra 3 pénalités",
+        "Si tu as un grand frère ou une grande soeur prend 2 pénalités",
+        "À tour de rôle dites la personne la plus connue que vous avez vue dans votre vie, la personne qui a la meilleure anecdote distribue 4 pénalités"
+
+    ],
+    "question":[
+        "Imite quelqu'un ici, la première personne à deviner distribue 2 pénalités",
+        "Sert un verre à la personne qui a le verre le moins rempli",
+        "Raconte une anecdote, les autres doivent deviner si c'est vrai ou faux. 2 pénalités pour les perdants",
+        "Mets de l'eau dans ta bouche et chante une chanson, la première personne à trouver le titre distribue 4 pénalités",
+        "Envoie un message à ton crush ou prends 4 pénalités. Si tu en as pas, envoie à ton ex",
+        "Raconte ton meilleur souvenir avec quelqu'un ici",
+        "Raconte une blague. Si personne rigole tu prends 2 pénalités",
+        "Qui a écrit Les misérables ? 2 pénalités si tu te trompes",
+        "Quel est ton artiste favori ? Ceux qui n'aiment pas prennent 2 pénalités",
+        "Fais un mime, la personne qui devine distribue 3 pénalités",
+        "Quel est ton record de pompes ? Si ça dépasse 50 t'es chaud tu peux distribuer 5 pénalités",
 
     ],
     "facile":[
@@ -320,9 +334,23 @@ function changeScore(){
 // Séléction d'une question au hasard
 
 const question = document.querySelector('.question')
+const playerNameTitle = document.querySelector('#playerNameTitle')
 
 function selectQuestion(){
-    question.innerText = data["questions"][Math.floor(Math.random() * (data["questions"].length - 0))]
+    let randNb= Math.floor(Math.random() * 2)
+    if(randNb==0){
+        playerNameTitle.innerText="Jeu"
+        question.innerText = data["jeu"][Math.floor(Math.random() * (data["jeu"].length - 0))]
+        question.classList.remove('questionAnimation')
+        question.classList.add('questionAnimation')
+    }
+    else if(randNb==1){
+        playerNameTitle.innerText=listeJoueur[Math.floor(Math.random() * listeJoueur.length)].nom
+        question.innerText = data["question"][Math.floor(Math.random() * (data["question"].length - 0))]
+        question.classList.remove('questionAnimation')
+        question.classList.add('questionAnimation')
+    }
+    
 }
 
 // Possiblité de relancer la question
