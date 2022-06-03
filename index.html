@@ -17,7 +17,7 @@
 
         <div class="containerAddPlayer">
           <input placeholder="Entrer un joueur" class="inputAddPlayer"></input>
-          <button class="buttonAddPlayer">+</button>
+          <button class="buttonAddPlayer"><p>+</p></button>
           <div class="beerCountContainer">
             <img id="firstDot" class="beerImg" src="images/beer.png"/>
             <img id="secondDot" class="whiteDotImg" src="images/whiteDot.png"/>
@@ -40,6 +40,7 @@
     <div class="pageGame">
       <div class="navBtn">
         <img src="images/replay.png" id="replay">
+        <!--<img src="images/settings.png" id="settings"> -->
       </div>
       <h1 id="playerNameTitle">Jeu</h1>
       <h5 class="question"></h5>
@@ -73,12 +74,50 @@
       <div class="button1 buttonNextPerson"><h1 class="btnText">Prochain Joueur</h1></div>     
     </div>
 
-    <!-- Écran de paramètres 
+    <!-- Écran de paramètres -->
     <div class="settingsContainer">
-      <div class="rowPlayerList"><h2 class="subTitlePlayer">louis</h2><div class="btnMinus">-</div><img src="images/level2.png"><div class="btnMore">+</div></div>
-      <div class="rowPlayerList"><h2 class="subTitlePlayer">axel</h2><div class="btnMinus">-</div><img src="images/level1.png"><div class="btnMore">+</div></div>
-      <div class="rowPlayerList"><h2 class="subTitlePlayer">mireille</h2><div class="btnMinus">-</div><img src="images/level0.png"><div class="btnMore">+</div></div>
-    </div> -->
+      <img src="images/close.png" id="close">
+      
+    </div>
+
+    <!-- Comment jouer ? -->
+    <div class="btnOpen">
+      <h5>Comment jouer ?</h5>
+    </div>
+
+    <div class="howToPlayContainer">
+      <img src="images/close.png" class="closeHowToPlay">
+      <h1>Comment jouer à Mentalo ?</h1>
+      <div class="chooseSectionHow">
+        <span id="sectionNiveaux" class="sectionBeer"><h4>Niveaux</h4></span>
+        <span id="sectionPartie"class="sectionBeer"><h4>La partie</h4></span>
+        <span id="sectionGage"class="sectionBeer"><h4>Les gages</h4></span>
+      </div>
+      <div class="howToNiveaux">
+        <p>Mentalo est le premier jeu à boire qui pense aussi à Sam ! En indiquant la quantité d'alcool que vous souhaitez boire, le jeu s'adapte à chacun.</p>
+        <br>
+        <p>Nous te conseillons de commencer doucement avec une ou deux pintes. Le niveau influence le nombre de gorgées que tu recevras comme pénalités</p>
+        <img src="images/level1.png">
+        <p>Si tu ne conduis pas et que tu veux boire plus, alors séléctionne le niveau le plus élevé ! Attention, tu recevras + de gorgées lors de la fin de la manche</p>
+        <img src="images/level3.png">
+        <p>Tu ne bois pas d'alcool ? Aucun souci ! Clique sur la première pinte pour l'enlever, tu ne recevras aucune gorgée, mais tu devras quand même faire les gages !</p>
+        <img src="images/level0.png">
+      </div>
+      <div class="howToPartie">
+        <p>Durant la partie, les questions défilent et les joueurs recevront des pénalités. Ce ne sont pas des gorgées à prendre, mais un indicateur sur ce que vous recevrez à la fin de la manche.</p>
+        <img src="images/partie1.png">
+        <p>À la fin du tour, distribuez les pénalités aux joueurs qui en ont reçu grâce aux compteurs</p>
+        <img src="images/partie2.png">
+      </div>
+      <div class="howToGage">
+        <p>Quand un joueur atteint 10 pénalités, la manche est finie. À tour de rôle vous aurez le choix entre deux gages, à vous de choisir ce qui vous convient !</p>
+        <img src="images/gage1.png">
+        <p>Le nombre de gorgeés est calculé en fonction du nombre de pénalités obtenues à cette manche, et en fonction du niveau que tu t'es attribué avant de commencer la partie</p>
+        <img src="images/gage2.png">
+        <p>Tu ne bois pas d'alcool ? Dans ce cas tu as le choix entre deux gages, à toi de voir lequel tu préfères</p>
+        <img src="images/gage3.png">
+      </div>
+    </div>
 
     <script src="scripts/main.js"></script>
   </body>

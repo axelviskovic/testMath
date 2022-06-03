@@ -4,7 +4,7 @@
 let data = {
     "jeu":[
         "Ceci est la première question du jeu, si vous tombez dessus tout le monde prend 4 pénalités",
-        "Ceux qui n'ont pas le permis prennent 3 pénalités",
+        "Ceux qui n'ont pas le permis B prennent 3 pénalités",
         "Plutôt football ou basket ? Votez en même temps, les minoritaires prennent 2 pénalités",
         "Le joueur le plus grand en taille distribue 4 pénalités",
         "Tu as fait caca aujourd'hui ? Prends 1 pénalités",
@@ -15,7 +15,7 @@ let data = {
         "Les personnes qui ont déjà couché le premier soir prennent 2 pénalités",
         "À tour de rôle citez une capitale, la personne qui répète ou ne trouve pas prend 3 pénalités",
         "Ceux qui n'ont pas continué les études après le bac prennent 2 pénalités",
-        "Ceux qui sont ensemble en cours prennent 3 pénalités",
+        "Ceux qui sont ensemble ou on été ensemble en cours prennent 3 pénalités",
         "À tour de rôle épelez le nom de la famille de votre voisin de droite, 2 pénalités en cas d'échec",
         "Plutôt Damso ou Ninho ? Votez et les minoritaires prennent 3 pénalités",
         "Si tu t'es déjà fait arrêter ou contrôler par la police prends 2 pénalités",
@@ -70,6 +70,7 @@ let data = {
         "Si tu as un grand frère ou une grande soeur prend 2 pénalités",
         "À tour de rôle dites la personne la plus connue que vous avez vue dans votre vie, la personne qui a la meilleure anecdote distribue 4 pénalités",
         "Plutôt Transformers ou Avengers ? Les minoritaires prennent 2 pénalités",
+        "Désignez ensemble la personne qui prendra 2 pénalités"
 
     ],
     "question":[
@@ -121,6 +122,10 @@ let data = {
         "Qui est la personne la plus intelligente ici ? Cette personne pourra distribuer 2 pénalités à 2 joueurs de son choix",
         "As-tu déjà utilisé un sextoy ? Prends 2 pénalités si c'est le cas",
         "Prends une pénalité pour chaque drogue illégale que tu as testée",
+        "Tu peux distribuer autant de pénalités que tu prendras de gorgées (max:5)",
+        "Si tu arrives à citer 5 positions du kamasutra tu peux distribuer 3 pénalités",
+        "Fais un pierre-feuille-ciseau avec ton voisin de droite, le perdant prend 2 pénalités",
+        "Distribue 1 pénalité pour chaque objet rouge que tu peux toucher dans la pièce (max:4)"
 
     ],
     "facile":[
@@ -128,7 +133,7 @@ let data = {
         "Raconte ce que tu as mangé à midi",
         "Qui était ton premier bisou",
         "Ferme les yeux pendant 1 minute",
-        "Mets toi sur les genoux de la personne de ton choix",
+        "Mets toi sur les genoux de la personne de ton choix pendant 2 minutes",
         "Fais 3 pompes",
         "Chante une musique que les autres devront reconnaître",
         "Quel est ta destination de rêve ?",
@@ -281,8 +286,9 @@ thirdDot.addEventListener(
 const buttonAddPlayer = document.querySelector('.buttonAddPlayer')
 const inputAddPlayer = document.querySelector('.inputAddPlayer')
 const containerlistPlayer = document.querySelector('.containerlistPlayer')
-const settingsContainer = document.querySelector('.settingsContainer')
 let listeJoueur= []
+let minusBtnList = []
+
 
 buttonAddPlayer.addEventListener(
     'click',
@@ -296,11 +302,26 @@ buttonAddPlayer.addEventListener(
             emptyBeer()
             listeJoueur.push(joueur1)
             inputAddPlayer.classList.remove('noNameInput')
+
+            const minusBtnList = document.querySelectorAll(".btnMinus")
+            const moreBtnList = document.querySelectorAll(".btnMore")
+
+            for(let i=0; i<minusBtnList.length; i++){
+                minusBtnList[i].addEventListener(
+                    'click',
+                    ()=>{
+                        console.log(minusBtnList)
+                    }
+                )
+            }
             
        }
         
     }
 )
+
+
+
 
 class Joueur {
     constructor(nom, niveau, points) {
@@ -308,9 +329,12 @@ class Joueur {
         this.niveau = numberBeer
         this.points = 0
         
-
+        
         let newDiv = document.createElement("div")
         newDiv.classList.add('rowPlayerList')
+
+        let newSettingsDiv = document.createElement("div")
+        newSettingsDiv.classList.add('setLevelContainer')
 
         let newPlayer = document.createElement("h2")
         newPlayer.classList.add('subTitlePlayer')
@@ -323,13 +347,22 @@ class Joueur {
         // btnMoins.innerText="-"
         // btnMoins.classList.add('btnMinus')
 
+        // let btnPlus = document.createElement('div')
+        // btnPlus.innerText="+"
+        // btnPlus.classList.add('btnMore')
+
+
         newDiv.appendChild(newPlayer)
-        newDiv.appendChild(newLevel)
+        newDiv.appendChild(newSettingsDiv)
+        // newSettingsDiv.appendChild(btnMoins)
+        //newSettingsDiv.appendChild(btnPlus)
+        newSettingsDiv.appendChild(newLevel)
+
         containerlistPlayer.appendChild(newDiv)
-        // settingsContainer.appendChild(newDiv)
 
     }
 }
+
 
 // Changer de page
 
@@ -339,6 +372,7 @@ const pageGame = document.querySelector('.pageGame')
 const listeScoreGame = document.querySelector('.listeScoreGame')
 const scoreJoueurs = document.querySelector('.scoreJoueurs')
 const containerChangeScore = document.querySelector('.containerChangeScore')
+const settingsContainer = document.querySelector('.settingsContainer')
 
 
 buttonValidationPlayer.addEventListener(
@@ -350,8 +384,14 @@ buttonValidationPlayer.addEventListener(
         displayJoueur()
         selectQuestion()
         changeScore()
+        moveListPlayer()
     }
 )
+
+function moveListPlayer(){
+    settingsContainer.appendChild(document.querySelector('.containerlistPlayer'))
+    const setLevelContainer = document.querySelector('.setLevelContainer').classList.add('rowSettings')
+}
 
 function displayJoueur(){
     for(let i=0; i<listeJoueur.length; i++){
@@ -532,7 +572,13 @@ buttonNextPerson.addEventListener(
             else{
                 const firstChallenge = document.querySelector('.firstChallenge h3')
                 const secondChallenge = document.querySelector('.secondChallenge h3') 
-                firstChallenge.innerText="Bois "+ Math.floor((listeJoueur[aquicestletour].points)*coeff) +" gorgées"
+                if(listeJoueur[aquicestletour].points==0){
+                    firstChallenge.innerText="Distribue "+(Math.floor(Math.random(3))+1)+" gorgées"
+                }
+                else{
+                    firstChallenge.innerText="Bois "+ Math.floor((listeJoueur[aquicestletour].points)*coeff) +" gorgées"
+                }
+                
                 if(listeJoueur[aquicestletour].points<4){
                     secondChallenge.innerText=data["facile"][Math.floor(Math.random() * (data["facile"].length - 0))]
                 }
@@ -552,3 +598,75 @@ buttonNextPerson.addEventListener(
     }
 )
 
+// SETTINGS
+
+// const settingsBtn = document.querySelector('#settings')
+
+// settingsBtn.addEventListener(
+//     'click',
+//     ()=>{
+//         settingsContainer.style.display="block"
+
+//         const closeBtn = document.querySelector('#close').addEventListener(
+//             'click',
+//             ()=>{
+//                 settingsContainer.style.display="none"
+//             }
+//         )
+//     }
+// )
+
+// HOW TO PLAY
+
+const btnOpen = document.querySelector('.btnOpen')
+const closeHowToPlay = document.querySelector('.closeHowToPlay')
+const howToPlayContainer = document.querySelector('.howToPlayContainer')
+
+
+btnOpen.addEventListener(
+    'click',
+    ()=>{
+        howToPlayContainer.style.display="flex"
+        closeHowToPlay.addEventListener(
+            'click',
+            ()=>{
+                howToPlayContainer.style.display="none"
+            }
+        )
+    }
+)
+
+const howToNiveaux = document.querySelector('.howToNiveaux')
+const howToPartie = document.querySelector('.howToPartie')
+const howToGage = document.querySelector('.howToGage')
+
+const sectionNiveaux = document.querySelector('#sectionNiveaux')
+const sectionPartie = document.querySelector('#sectionPartie')
+const sectionGage = document.querySelector('#sectionGage')
+
+sectionNiveaux.addEventListener(
+    'click',
+    ()=>{
+        howToPartie.style.display="none"
+        howToGage.style.display="none"
+        howToNiveaux.style.display="flex"
+    }
+)
+
+sectionPartie.addEventListener(
+    'click',
+    ()=>{
+        howToPartie.style.display="flex"
+        howToNiveaux.style.display="none"
+        howToGage.style.display="none"
+    }
+)
+
+sectionGage.addEventListener(
+    'click',
+    ()=>{
+        howToPartie.style.display="none"
+        howToNiveaux.style.display="none"
+        howToGage.style.display="flex"
+    }
+)
