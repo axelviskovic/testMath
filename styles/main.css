@@ -333,7 +333,14 @@ h1{
     width: 70px;
     height: 40px;
     text-align: center;
+    font-family: Fredo;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
+
+
 
 /* CHALLENGES */
 
@@ -407,7 +414,7 @@ h1{
 }
 
 .setLevelContainer{
-    width: 30%;
+    width: 20%;
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -554,6 +561,7 @@ h1{
     margin: 0 auto;
     display: block;
     margin-bottom: 50px;
+    border-radius: 20px;
 }
 
 .howToGage{
@@ -565,6 +573,7 @@ h1{
 
 .howToGage img{
     margin-bottom: 50px;
+    border-radius: 20px;
 }
 
 .howToGage :nth-child(2){
