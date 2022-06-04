@@ -70,7 +70,15 @@ let data = {
         "Si tu as un grand frère ou une grande soeur prend 2 pénalités",
         "À tour de rôle dites la personne la plus connue que vous avez vue dans votre vie, la personne qui a la meilleure anecdote distribue 4 pénalités",
         "Plutôt Transformers ou Avengers ? Les minoritaires prennent 2 pénalités",
-        "Désignez ensemble la personne qui prendra 2 pénalités"
+        "Désignez ensemble la personne qui prendra 2 pénalités",
+        "Désignez ensemble la personne qui aura le choix entre faire 10 pompes et recevoir 3 pénalités",
+        "Tous ceux qui ont de la vodka dans leur verre prennent 2 pénalités",
+        "Tous ceux qui boivent de la bière à cette soirée prennent 2 pénalités",
+        "Ceux qui ont déjà trouvé de l'argent par terre prennent 1 pénalité",
+        "Votez pour la personne qui a le plus de chance de devenir riche. Bill Gates prendra 2 pénalités",
+        "Ceux qui ont déjà pris une photo avec une célébrité prennent 1 pénalité, et disent avec qui c'était",
+        "La personne qui organise la soirée sert un verre à tout le monde ou prend 2 pénalités",
+        "Désignez ensemble la personne qui a le plus de chance de pécho ce soir"
 
     ],
     "question":[
@@ -125,42 +133,44 @@ let data = {
         "Tu peux distribuer autant de pénalités que tu prendras de gorgées (max:5)",
         "Si tu arrives à citer 5 positions du kamasutra tu peux distribuer 3 pénalités",
         "Fais un pierre-feuille-ciseau avec ton voisin de droite, le perdant prend 2 pénalités",
-        "Distribue 1 pénalité pour chaque objet rouge que tu peux toucher dans la pièce (max:4)"
+        "Distribue 1 pénalité pour chaque objet rouge que tu peux toucher dans la pièce (max:4)",
+        "Essaie de deviner l'artiste musical préféré d'un de tes voisins pour distribuer 3 pénalités",
+        "Je n'ai jamais : dis nous quelque chose que tu n'as jamais fait, ceux qui l'ont déjà fait prennent 2 pénalités",
+        ""
 
     ],
     "facile":[
         "Fais un bisou sur la joue de ton voisin de droite",
-        "Raconte ce que tu as mangé à midi",
+        "À quel âge as-tu eu ton premier rapport sexuel ?",
         "Qui était ton premier bisou",
         "Ferme les yeux pendant 1 minute",
-        "Mets toi sur les genoux de la personne de ton choix pendant 2 minutes",
-        "Fais 3 pompes",
+        "Fais 5 pompes",
         "Chante une musique que les autres devront reconnaître",
-        "Quel est ta destination de rêve ?",
+        "Avec qui ici ne pourrais-tu pas finir ta vie ?",
         "Qui ici est le mieux habillé ?",
+        "Raconte nous une blague",
         "Avec qui partirais-tu en vacances ici ?"
     ],
     "moyen":[
         "Embrasse le cou de ton voisin de gauche",
         "Sens l'aisselle de la personne de ton choix",
-        "Quand était ton dernier rappport sexuel ?",
-        "Raconte nous une blague",
+        "Raconte nous ton dernier rappport sexuel ?",
         "Laisse le joueur de ton choix te mettre une petite claque",
         "Mets toi pieds nus",
-        "Mets toi sur les genoux de la personne de ton choix",
+        "Mets toi sur les genoux de la personne de ton choix pendant 2 minutes",
         "Combien as-tu eu de partenaires sexuels ?",
         "Quelle est la personne la plus attirante ici ?",
-        "Tourne 10 fois sur toi-même et marche",
-        "Imite un joueur présent",
+        "Tourne 10 fois sur toi-même et marche droit",
+        "Imite un joueur présent en le caricaturant",
         "Échange de haut avec le joueur de ton choix",
         "Qui ici est le plus sexy ?",
-        "Jusqu'au prochain tour finis toutes tes phrases par : je suce"
+        "Pendant la prochaine partie finis toutes tes phrases par : je suce"
     ],
     "difficile":[
         "Danse sans musique pendant 30 secondes",
         "Crie par la fenêtre",
         "Fais 20 pompes (sur les genoux si tu galères)",
-        "Appelle quelqu'un de ton répertoire",
+        "Appelle quelqu'un de ton répertoire au hasard",
         "Enlève deux vêtements",
         "Bois un shot de grenadine",
         "Fais 30 squats",
@@ -171,10 +181,10 @@ let data = {
         "Raconte quelque chose que personne ici ne sait",
         "Ne fume pas jusqu'à la fin de la partie",
         "Envoie un message à ton crush",
-        "Poste sur les réseaux une blague nulle",
+        "Poste sur les réseaux une blague nulle que les joueurs choisissent",
         "Envoie à tes parents le mot : caca",
         "Quelle est la personne la moins attirante ici ?",
-        "Jusqu'à la fin de la partie parle en chuchotant"
+        "Pendant la prochaine partie parle en chuchotant"
         
     ]
 }
@@ -287,7 +297,7 @@ const buttonAddPlayer = document.querySelector('.buttonAddPlayer')
 const inputAddPlayer = document.querySelector('.inputAddPlayer')
 const containerlistPlayer = document.querySelector('.containerlistPlayer')
 let listeJoueur= []
-let minusBtnList = []
+// let minusBtnList = []
 
 
 buttonAddPlayer.addEventListener(
@@ -303,23 +313,61 @@ buttonAddPlayer.addEventListener(
             listeJoueur.push(joueur1)
             inputAddPlayer.classList.remove('noNameInput')
 
-            const minusBtnList = document.querySelectorAll(".btnMinus")
-            const moreBtnList = document.querySelectorAll(".btnMore")
+            // const minusBtnList = document.querySelectorAll(".btnMinus")
+            // const moreBtnList = document.querySelectorAll(".btnMore")
+            // const editPlayer = document.querySelectorAll(".nameContainer img")
+            // const editPlayerOldName = document.querySelectorAll(".subTitlePlayer")
+            // const editPlayerOldLevel = document.querySelectorAll(".setLevelContainer img")
 
-            for(let i=0; i<minusBtnList.length; i++){
-                minusBtnList[i].addEventListener(
-                    'click',
-                    ()=>{
-                        console.log(minusBtnList)
-                    }
-                )
-            }
+            // for(let i=0; i<editPlayer.length; i++){
+            //     editPlayer[i].addEventListener(
+            //         'click',
+            //         ()=>{  
+            //             const editPlayerContainer = document.querySelector(".editPlayerContainer").style.display="flex"
+            //             const editPlayerName = document.querySelector('.editPlayerInner input').setAttribute("placeholder", listeJoueur[i].nom)
+            //             const editPlayerLevel = document.querySelector('.editPlayerLevel img').src="images/level"+listeJoueur[i].niveau+".png"
+
+            //             const decreasePlayerLevel = document.querySelector('#decreasePlayerLevel').addEventListener(
+            //                 'click',
+            //                 ()=>{
+            //                     if(listeJoueur[i].niveau>0){
+            //                         listeJoueur[i].niveau--
+            //                         const editPlayerLevel = document.querySelector('.editPlayerLevel img').src="images/level"+listeJoueur[i].niveau+".png"
+            //                     }
+            //                 }
+            //             )
+
+            //             const increasePlayerLevel = document.querySelector('#increasePlayerLevel').addEventListener(
+            //                 'click',
+            //                 ()=>{
+            //                     if(listeJoueur[i].niveau<3){
+            //                         listeJoueur[i].niveau++
+            //                         const editPlayerLevel = document.querySelector('.editPlayerLevel img').src="images/level"+listeJoueur[i].niveau+".png"
+            //                     }
+            //                 }
+            //             )
+
+            //             const editPlayerValidation = document.querySelector('.editPlayerValidation').addEventListener(
+            //                 'click',
+            //                 ()=>{
+            //                     const editPlayerContainer = document.querySelector(".editPlayerContainer").style.display="none"
+            //                     const editPlayerNameChange = document.querySelector(".editPlayerInner input").value
+            //                     if(editPlayerNameChange!=""){
+            //                         editPlayerOldName[i].innerText= editPlayerNameChange
+            //                         listeJoueur[i].nom = editPlayerNameChange
+            //                     }  
+            //                     editPlayerOldLevel[i].src="images/level"+listeJoueur[i].niveau+".png"
+            //                 }
+            //             )
+            //         }
+            //     )
+            // }  
             
-       }
-        
+
+             
+       }      
     }
 )
-
 
 
 
@@ -336,6 +384,12 @@ class Joueur {
         let newSettingsDiv = document.createElement("div")
         newSettingsDiv.classList.add('setLevelContainer')
 
+        // let nameContainerCreate = document.createElement("div")
+        // nameContainerCreate.classList.add('nameContainer')
+
+        // let createEdit = document.createElement("img")
+        // createEdit.setAttribute("src", "images/edit.png")
+
         let newPlayer = document.createElement("h2")
         newPlayer.classList.add('subTitlePlayer')
         newPlayer.innerText = this.nom
@@ -351,12 +405,14 @@ class Joueur {
         // btnPlus.innerText="+"
         // btnPlus.classList.add('btnMore')
 
-
+        // nameContainerCreate.appendChild(createEdit)
         newDiv.appendChild(newPlayer)
+        //newDiv.appendChild(nameContainerCreate)
         newDiv.appendChild(newSettingsDiv)
         // newSettingsDiv.appendChild(btnMoins)
-        //newSettingsDiv.appendChild(btnPlus)
         newSettingsDiv.appendChild(newLevel)
+        // newSettingsDiv.appendChild(btnPlus)
+        
 
         containerlistPlayer.appendChild(newDiv)
 
@@ -562,11 +618,11 @@ buttonNextPerson.addEventListener(
                 }
                 else if(listeJoueur[aquicestletour].points<8){
                     firstChallenge.innerText=data["moyen"][Math.floor(Math.random() * (data["moyen"].length - 0))]
-                    secondChallenge.innerText=data["facile"][Math.floor(Math.random() * (data["facile"].length - 0))]
+                    secondChallenge.innerText=data["facile"][Math.floor(Math.random() * (data["moyen"].length - 0))]
                 }
                 else if(listeJoueur[aquicestletour].points>7){
                     firstChallenge.innerText=data["difficile"][Math.floor(Math.random() * (data["difficile"].length - 0))]
-                    secondChallenge.innerText=data["facile"][Math.floor(Math.random() * (data["facile"].length - 0))]
+                    secondChallenge.innerText=data["facile"][Math.floor(Math.random() * (data["difficile"].length - 0))]
                 }
             }
             else{
@@ -670,3 +726,54 @@ sectionGage.addEventListener(
         howToGage.style.display="flex"
     }
 )
+
+
+
+
+// let listeQuestion = []
+// let questionAlready = true
+
+// function selectQuestion(){
+//     let randNb= Math.floor(Math.random() * 2)
+//     if(randNb==0){
+//         playerNameTitle.innerText="Jeu"
+//         if(questionAlready==true && listeQuestion.length>0){
+//             questionAsked = data["jeu"][Math.floor(Math.random() * (data["jeu"].length - 0))]
+//             for(let i=0; i<listeQuestion.length; i++){
+//                if(listeQuestion[i]!=questionAsked){
+//                    questionAlready=false
+//                    console.log(questionAlready)
+//                } 
+//             }
+//         }
+//         else if(listeQuestion.length==0){
+//             questionAsked = data["jeu"][Math.floor(Math.random() * (data["jeu"].length - 0))]
+//         }
+//         question.innerText = questionAsked
+//         question.classList.remove('questionAnimation')
+//         question.classList.add('questionAnimation')
+//         listeQuestion.push(question.textContent)
+//         questionAlready=true
+//     }
+//     else if(randNb==1){
+//         if(questionAlready==true && listeQuestion.length>0){
+//             questionAsked = data["question"][Math.floor(Math.random() * (data["question"].length - 0))]
+//             for(let i=0; i<listeQuestion.length; i++){
+//                if(listeQuestion[i]!=questionAsked){
+//                    questionAlready=false
+//                    console.log(questionAlready)
+//                } 
+//             }
+//         }
+//         else if(listeQuestion.length==0){
+//             questionAsked = data["question"][Math.floor(Math.random() * (data["question"].length - 0))]
+//         }
+//         playerNameTitle.innerText=listeJoueur[Math.floor(Math.random() * listeJoueur.length)].nom
+//         questionAsked.innerText = data["question"][Math.floor(Math.random() * (data["question"].length - 0))]
+//         question.classList.remove('questionAnimation')
+//         question.classList.add('questionAnimation')
+//         listeQuestion.push(question.textContent)
+//         questionAlready=true
+//     }
+    
+// }

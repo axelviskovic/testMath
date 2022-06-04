@@ -413,6 +413,17 @@ h1{
     background-color: #343434;
 }
 
+.nameContainer{
+    display: flex;
+    align-items: center;
+}
+
+.nameContainer img{
+    width: 40px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
 .setLevelContainer{
     width: 20%;
     height: 100%;
@@ -579,6 +590,108 @@ h1{
 .howToGage :nth-child(2){
    width: 500px;
 }
+
+
+/* CHANGE PLAYERS */
+
+.editPlayerContainer{
+    width: 50%;
+    min-height: 600px;
+    position: absolute;
+    top : 5%;
+    left: 25%;
+    background-color: #343434;
+    border: 10px solid #7a7a7a;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* #closeEditPlayer{
+    width: 40px;
+    height: auto;
+    margin: 10px 0 0 10px;
+    cursor: pointer;
+} */
+
+.editPlayerContainer h1{
+    margin : 20px 0;
+    font-family: Fredo;
+    font-size: 64px;
+}
+
+.editPlayerInner{
+    display: flex;
+    width: 80%;
+    margin: 50px auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editPlayerInner .inputAddPlayer{
+    border: 5px solid white;
+    margin: 0;
+    width: 50%;
+}
+
+.editPlayerLevel{ 
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editPlayerInner h2{
+    font-family: Fredo;
+    color: white;
+}
+
+#decreasePlayerLevel, #increasePlayerLevel{
+    width: 50px;
+    height: 50px;
+    background-color: #F94A4A;
+    color: white;
+    font-size: 40px;
+    font-family: Poppins;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.editPlayerValidation{
+    width: 40%;
+    height: 60px;
+    background-color: green;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 36px;
+    color: white;
+    font-family: Fredo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.editPlayerDelete{
+    width: 40%;
+    height: 60px;
+    background-color: #F94A4A;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 26px;
+    color: white;
+    font-family: Fredo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+
 
 @font-face {
     font-family: Orangina;
