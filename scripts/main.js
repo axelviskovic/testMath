@@ -78,7 +78,9 @@ let data = {
         "Votez pour la personne qui a le plus de chance de devenir riche. Bill Gates prendra 2 pénalités",
         "Ceux qui ont déjà pris une photo avec une célébrité prennent 1 pénalité, et disent avec qui c'était",
         "La personne qui organise la soirée sert un verre à tout le monde ou prend 2 pénalités",
-        "Désignez ensemble la personne qui a le plus de chance de pécho ce soir"
+        "Désignez ensemble la personne qui a le plus de chance de pécho ce soir",
+        "Ceux qui regardent ou ont fini Stranger Things prennent 2 pénalités",
+        "Le premier joueur qui propose un massage à un autre joueur peut distribuer 5 pénalités"        
 
     ],
     "question":[
@@ -136,8 +138,10 @@ let data = {
         "Distribue 1 pénalité pour chaque objet rouge que tu peux toucher dans la pièce (max:4)",
         "Essaie de deviner l'artiste musical préféré d'un de tes voisins pour distribuer 3 pénalités",
         "Je n'ai jamais : dis nous quelque chose que tu n'as jamais fait, ceux qui l'ont déjà fait prennent 2 pénalités",
-        ""
-
+        "Imite une prostituée qui essaierait d'attirer des clients ou prends 3 pénalités. Si un joueur accepte tes services distribue 2 pénalités",
+        "Avec qui ici ne ferais-tu pas une coloc ? 3 pénalités si tu ne réponds pas",
+        "Si tu as déjà embrassé un joueur dans la pièce prends 2 pénalités, tu peux révéler qui c'est pour en distribuer 3",
+        "Laisse le joueur de ton choix remplir ton verre avec ce qu'il souhaite"
     ],
     "facile":[
         "Fais un bisou sur la joue de ton voisin de droite",
@@ -149,12 +153,14 @@ let data = {
         "Avec qui ici ne pourrais-tu pas finir ta vie ?",
         "Qui ici est le mieux habillé ?",
         "Raconte nous une blague",
-        "Avec qui partirais-tu en vacances ici ?"
+        "Avec qui partirais-tu en vacances ici ?",
+        "Dis nous ce que tu penses de ton voisin de gauche",
+        "Fais l'éloge de tes 2 voisins"
     ],
     "moyen":[
         "Embrasse le cou de ton voisin de gauche",
         "Sens l'aisselle de la personne de ton choix",
-        "Raconte nous ton dernier rappport sexuel ?",
+        "Raconte nous ton dernier rappport sexuel",
         "Laisse le joueur de ton choix te mettre une petite claque",
         "Mets toi pieds nus",
         "Mets toi sur les genoux de la personne de ton choix pendant 2 minutes",
@@ -164,7 +170,8 @@ let data = {
         "Imite un joueur présent en le caricaturant",
         "Échange de haut avec le joueur de ton choix",
         "Qui ici est le plus sexy ?",
-        "Pendant la prochaine partie finis toutes tes phrases par : je suce"
+        "Pendant la prochaine partie finis toutes tes phrases par : je suce",
+        "Essaie de convaincre le joueur de ta droite d'épouser le joueur de ta gauche"
     ],
     "difficile":[
         "Danse sans musique pendant 30 secondes",
@@ -184,7 +191,10 @@ let data = {
         "Poste sur les réseaux une blague nulle que les joueurs choisissent",
         "Envoie à tes parents le mot : caca",
         "Quelle est la personne la moins attirante ici ?",
-        "Pendant la prochaine partie parle en chuchotant"
+        "Pendant la prochaine partie parle en chuchotant",
+        "Donne un défaut et une qualité pour chaque joueur",
+        "Lèche le front du joueur à ta gauche",
+        "Lèche l'oreille du joueur à ta droite"
         
     ]
 }
