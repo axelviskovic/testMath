@@ -628,11 +628,11 @@ buttonNextPerson.addEventListener(
                 }
                 else if(listeJoueur[aquicestletour].points<8){
                     firstChallenge.innerText=data["moyen"][Math.floor(Math.random() * (data["moyen"].length - 0))]
-                    secondChallenge.innerText=data["facile"][Math.floor(Math.random() * (data["moyen"].length - 0))]
+                    secondChallenge.innerText=data["moyen"][Math.floor(Math.random() * (data["moyen"].length - 0))]
                 }
                 else if(listeJoueur[aquicestletour].points>7){
                     firstChallenge.innerText=data["difficile"][Math.floor(Math.random() * (data["difficile"].length - 0))]
-                    secondChallenge.innerText=data["facile"][Math.floor(Math.random() * (data["difficile"].length - 0))]
+                    secondChallenge.innerText=data["difficile"][Math.floor(Math.random() * (data["difficile"].length - 0))]
                 }
             }
             else{
