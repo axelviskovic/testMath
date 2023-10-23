@@ -14,6 +14,7 @@
     let n = 5;
     let a = 0;
     let x = 1;
+    let tab = [];
 
     // Animation de la rotation
     function animRotation(element, angle, duree, easing, complet) {
@@ -66,16 +67,19 @@
     closeButton.addEventListener(
         'click',
         ()=>{
-            questionContainer.style.top="100%" 
+            questionContainer.style.top="300%" 
         }
     )
-
+    let q
     function chooseQuestion(nb){
         questionTitle.textContent=questions[nb].category
         description.textContent=questions[nb].regle
-        let m = Math.floor(Math.random() * questions[nb]["questions"].length)
-        let q = questions[nb]["questions"][m]
-        console.log(q)
+        do{
+          let m = Math.floor(Math.random() * questions[nb]["questions"].length)
+          q = questions[nb]["questions"][m]
+        } while(tab.includes(q.question))
+        console.log(q.question)
+        tab.push(q.question)
         question.textContent=q.question
     }
 
@@ -91,10 +95,31 @@ let questions = [
             "question": "Quel est ton plus grand fantasme ? (2 gorgées)",
           },
           {
-            "question": "Qui a découvert la loi de la gravité ? (3 gorgées)",
+            "question": "Tu aimerais te faire dominer par ton partenaire ? (3 gorgées)",
           },
           {
-            "question": "Quelle est la plus grande planète du système solaire ? (1 gorgée)",
+            "question": "Quelle est la partie du corps de ton partenaire que tu as envie de toucher tout de suite ? (1 gorgée)",
+          },
+          {
+            "question": "Quelle est ta position préférée ? (1 gorgée)",
+          },
+          {
+            "question": "Combien font 248x8799 ? (4 gorgées)",
+          },
+          {
+            "question": "Combien as tu eu de partenaires sexuels ? (4 gorgées)",
+          },
+          {
+            "question": "Quel est l'endroit où tu rêves de faire l'amour ? (2 gorgées)",
+          },
+          {
+            "question": "Quelle est la date de naissance de ton partenaire ? (5 gorgées)",
+          },
+          {
+            "question": "Quel est le nom de la musique qui passe ? (3 gorgées)",
+          },
+          {
+            "question": "Quel est le pire redflag chez un partenaire ? (1 gorgées)",
           }
         ]
       },
@@ -113,6 +138,15 @@ let questions = [
           },
           {
             "question": "Je n'ai jamais trompé mon partenaire (2 gorgées)"
+          },
+          {
+            "question": "Je n'ai jamais fait de quicky. (3 gorgées)",
+          },
+          {
+            "question": "Je n'ai jamais fait de plan en extérieur. (3 gorgées)",
+          },
+          {
+            "question": "Je n'ai jamais été la première fois de quelqu'un. (4 gorgées)",
           }
         ]
       },
@@ -132,6 +166,37 @@ let questions = [
           {
             "question": "Chuchotte à l'oreille de ton partenaire sensuellement ce que tu aimerais qu'il/elle fasse. Il ne doit pas le faire. (2 gorgées)"
           }
+          ,
+          {
+            "question": "Pendant le reste de la partie, réponds aux questions par 'Oui maître/maîtresse'. (1 gorgée par oubli)"
+          },
+          {
+            "question": "Fais une galipette. (4 gorgées)"
+          },
+          {
+            "question": "Fais un double backflip. (4 gorgées)"
+          },
+          {
+            "question": "Fais une danse sexy. (3 gorgées)"
+          },
+          {
+            "question": "Ferme les yeux et laisse ton partenaire te toucher. (4 gorgées)"
+          },
+          {
+            "question": "Envoie 'jai envie de toi' à un contact choisi par ton partenaire. (4 gorgées)"
+          },
+          {
+            "question": "Essaie de faire sourire ton partenaire en moins de 40 secondes. (2 gorgées)"
+          },
+          {
+            "question": "Assieds toi sur les genoux de ton partenaire pendant 3 tours. (4 gorgées)"
+          },
+          {
+            "question": "Le premier qui enlève un vêtement distribue 5 gorgées à l'autre."
+          },
+          {
+            "question": "Scroll dans ta galerie au hasard et montre la photo. (4 gorgées)"
+          }
         ]
       },
       {
@@ -146,6 +211,24 @@ let questions = [
           },
           {
             "question": "Vous prenez tous 3 gorgées !"
+          },
+          {
+            "question": "Pose ta main sur le sexe de ton partenaire pendant 3 tours. (2 gorgées)"
+          },
+          {
+            "question": "Lèche le cou de ton partenaire sensuellement. (3 gorgées)"
+          },
+          {
+            "question": "Caresse la cuisse de ton partenaire pendant le prochain tour. (4 gorgées)"
+          },
+          {
+            "question": "Lèche la partie de ton choix du corps de ton partenaire. (2 gorgées)"
+          },
+          {
+            "question": "Caresse la poitrine de ton partenaire. (2 gorgées)"
+          },
+          {
+            "question": "Mime une position que tu aimes faire avec ton partenaire. (3 gorgées)"
           }
         ]
       },
@@ -160,7 +243,31 @@ let questions = [
             "question": "Pour ou contre le couple libre ?",
           },
           {
-            "question": "Conjuguez le verbe 'manger' au passé composé.",
+            "question": "Faites vous un câlin (c bo lamour)",
+          },
+          {
+            "question": "Resers à boire à ton partenaire",
+          },
+          {
+            "question": "Relance la roue",
+          },
+          {
+            "question": "Relance la roue",
+          },
+          {
+            "question": "Relance la roue",
+          },
+          {
+            "question": "Relance la roue",
+          },
+          {
+            "question": "Relance la roue",
+          },
+          {
+            "question": "Relance la roue",
+          },
+          {
+            "question": "Relance la roue",
           }
         ]
       }
