@@ -4,7 +4,12 @@
 
     const canvas = document.getElementById('roulette');
     const flecheButton = document.getElementById('fleche');
-    const resultParagraph = document.querySelector('p');
+
+    const closeButton = document.querySelector('.closeButton')
+    const questionContainer = document.querySelector('.questionContainer')
+    const questionTitle = document.querySelector('.questionTitle')
+    const description = document.querySelector('.description')
+    const question = document.querySelector('.question')
 
     let n = 5;
     let a = 0;
@@ -29,6 +34,10 @@
             } else {
                 element.style.transform = `rotate(${startAngle + angle}deg)`;
                 if (complet) complet();
+                setTimeout(() => {
+                    questionContainer.style.top="0"  
+                }, 1000);
+                
             }
         }
 
@@ -48,13 +57,27 @@
             x = alea(n);
         } while (x === lastNb);
         lastNb=x
-        x = alea(n);
         a = (360 * x / n + 360 * (x - 1) / n) / 2;
         console.log(x)
+        chooseQuestion(x)
         animRotation(flecheButton, (360*5) + a, 1500 + (a / 360 * 500), "ease");
     });
 
+    closeButton.addEventListener(
+        'click',
+        ()=>{
+            questionContainer.style.top="100%" 
+        }
+    )
 
+    function chooseQuestion(nb){
+        questionTitle.textContent=questions[nb].category
+        description.textContent=questions[nb].regle
+        let m = Math.floor(Math.random() * questions[nb]["questions"].length)
+        let q = questions[nb]["questions"][m]
+        console.log(q)
+        question.textContent=q.question
+    }
 
 // QUESTIONS
 
@@ -65,16 +88,13 @@ let questions = [
         "regle": "Réponds à la question ou bois le nombre de gorgées",
         "questions": [
           {
-            "question": "Quelle est la formule chimique de l'eau ?",
-            "points": 2
+            "question": "Quel est ton plus grand fantasme ? (2 gorgées)",
           },
           {
-            "question": "Qui a découvert la loi de la gravité ?",
-            "points": 3
+            "question": "Qui a découvert la loi de la gravité ? (3 gorgées)",
           },
           {
-            "question": "Quelle est la plus grande planète du système solaire ?",
-            "points": 1
+            "question": "Quelle est la plus grande planète du système solaire ? (1 gorgée)",
           }
         ]
       },
@@ -83,34 +103,34 @@ let questions = [
         "regle": "Ceux qui n'ont jamais fait ça prennent le nombre de gorgées",
         "questions": [
           {
-            "question": "Quel est le résultat de 5 x 7 ?",
-            "points": 1
+            "question": "Je n'ai jamais fait de plan à 3 ou + (3 gorgées)"
           },
           {
-            "question": "Résolvez l'équation x² - 4x + 4 = 0.",
-            "points": 3
+            "question": "Je n'ai jamais simulé un orgasme. (2 gorgées)"
           },
           {
-            "question": "Quelle est la racine carrée de 16 ?",
-            "points": 2
+            "question": "Je n'ai jamais uriné sur mon partenaire. (4 gorgées)"
+          },
+          {
+            "question": "Je n'ai jamais trompé mon partenaire (2 gorgées)"
           }
         ]
       },
       {
         "category": "Défi",
-        "regle": "Réalise le défi ou bois le nombre de pénalité",
+        "regle": "Réalise le défi ou bois le nombre de gorgées indiqué si tu échoues ou refuses.",
         "questions": [
           {
-            "question": "Femme : tu as 30 secondes pour donner une érection à ton partenaire. Si tu y arrives il prend le nombre de gorgées indiquées. Sinon tu les prends.",
-            "points": 2
+            "question": "Femme : tu as 30 secondes pour donner une érection à ton partenaire. (2 gorgées)"
           },
           {
-            "question": "Donnez la définition du mot 'altruisme'.",
-            "points": 3
+            "question": "Ferme les yeux. Ton/ta partenaire caresse une partie de ton corps avec la partie de son corps de son choix et tu dois deviner ce que c'est. (3 gorgées)"
           },
           {
-            "question": "Conjuguez le verbe 'manger' au passé composé.",
-            "points": 1
+            "question": "Enlève un vêtement. (5 gorgées)"
+          },
+          {
+            "question": "Chuchotte à l'oreille de ton partenaire sensuellement ce que tu aimerais qu'il/elle fasse. Il ne doit pas le faire. (2 gorgées)"
           }
         ]
       },
@@ -119,16 +139,13 @@ let questions = [
         "regle": "Réalise le gage ET bois le nombre de pénalité",
         "questions": [
           {
-            "question": "Qui est l'auteur de 'Les Misérables' ?",
-            "points": 2
+            "question": "Enlève un vêtement. (2 gorgées)"
           },
           {
-            "question": "Donnez la définition du mot 'altruisme'.",
-            "points": 3
+            "question": "Enlêve un vêtement de ton partenaire sans utiliser tes mains. (3 gorgées)"
           },
           {
-            "question": "Conjuguez le verbe 'manger' au passé composé.",
-            "points": 1
+            "question": "Vous prenez tous 3 gorgées !"
           }
         ]
       },
@@ -138,15 +155,12 @@ let questions = [
         "questions": [
           {
             "question": "Fais un massage à ton/ta partenaire pendant 1 minute, à l'endroit de son choix",
-            "points": 2
           },
           {
             "question": "Pour ou contre le couple libre ?",
-            "points": 3
           },
           {
             "question": "Conjuguez le verbe 'manger' au passé composé.",
-            "points": 1
           }
         ]
       }

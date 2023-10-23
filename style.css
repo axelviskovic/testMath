@@ -1,11 +1,12 @@
 body{
     position: relative;
+    background-color: #ff9d9d;
 }
   
   /* Placement de la roulette */
   #roulette{
     position:absolute;
-    transform: rotate(-100deg);
+    transform: scale(1.5) rotate(-100deg);
   }
   
   /* Placement de la fleche */
@@ -62,13 +63,15 @@ body{
     height: 100vh;
     position: absolute;
     z-index: 3;
-    top: 0;
+    top: 100%;
     left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: black;
     padding: 20px 100px;
+    margin: 0;
+    transition: all ease .6s;
 }
 
 .questionTitle{
@@ -88,13 +91,6 @@ body{
 .question{
     color: white;
     font-size: 80px;
-    font-weight: 400;
-    margin-bottom: 20px;
-}
-
-.nbPoint{
-    color: white;
-    font-size: 40px;
     font-weight: 400;
     margin-bottom: 60px;
 }
