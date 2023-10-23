@@ -1,139 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Mentaloaaaa</title>
-    <meta name="description" content="description de la page"/>
-    <link rel="stylesheet" href="styles/main.css">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Site Web</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
-  </head>
-  <body>
-
-    <!-- Page de séléction des joueurs -->
-    <div class="pagePlayerSelect">
-        <img src="images/logo.png" id="logoMentalo" alt="logo"/>
-
-        <div class="containerAddPlayer">
-          <input placeholder="Entrer un joueuraa" class="inputAddPlayer"></input>
-          <button class="buttonAddPlayer"><p>+</p></button>
-          <div class="beerCountContainer">
-            <img id="firstDot" class="beerImg" src="images/beer.png"/>
-            <img id="secondDot" class="whiteDotImg" src="images/whiteDot.png"/>
-            <img id="thirdDot" class="whiteDotImg" src="images/whiteDot.png"/>
-          </div>
-        </div>
-
-        <div class="containerlistPlayer">
-          <div class="rowPlayerList">
-            <h2 class="subTitle">Joueurs</h2>
-            <h2 class="subTitle">Niveau</h2>
-          </div>
-        </div>
-
-        <div class="button1 buttonValidationPlayer"><h1 class="btnText">Lancer la partie</h1></div>
-    </div>
-
-
-    <!-- Page du jeu -->
-    <div class="pageGame">
-      <div class="navBtn">
-        <img src="images/replay.png" id="replay">
-        <!--<img src="images/settings.png" id="settings"> -->
-      </div>
-      <h1 id="playerNameTitle">Jeu</h1>
-      <h5 class="question"></h5>
-      <div class="button1 buttonSeeResult"><h1 class="btnText">Continuer</h1></div>
-      <div class="listeScoreGame"></div>
-    </div>
-
-    <!-- Page des résultats -->
-    <div class="pageResults">
-      <h1>Resultats</h1>
-      <div class="containerChangeScore">
-      </div>
-      <div class="button1 buttonNextQuestion"><h1 class="btnText">Continuer</h1></div>     
-    </div>
-
-    <!-- Page des défis -->
-    <div class="pageChallenge">
-      <h1 id="nameJoueurChallenge">Alerte</h1>
-      <h2 class="subTitleSoft">Un des joueurs a atteint 10 pénalités ! À tour de rôle choisissez votre gage.</h2>
-      <div class="defiContainer">
-        <div class="firstChallenge">
-          <img src="images/beer.png">
-          <h3>Gage boisson</h3>
-        </div>
-        <h2 class="subTitleSoft">OU</h2>
-        <div class="secondChallenge">
-          <img src="images/challenge.png">
-          <h3>Gage action</h3>
-        </div>
-      </div>
-      <div class="button1 buttonNextPerson"><h1 class="btnText">Prochain Joueur</h1></div>     
-    </div>
-
-    <!-- Écran de paramètres -->
-    <div class="settingsContainer">
-      <img src="images/close.png" id="close">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
       
+    <div class="rouletteContainer">
+        <img src="roulette.png" id="roulette">
+        <img id="fleche" src="arrow.png" alt="Fleche manquante, en chercher une autre" height="50" width="400">
     </div>
 
-    <!-- Comment jouer ? -->
-    <div class="btnOpen">
-      <h5>Comment jouer ?</h5>
+    <div class="button">
+        <p class="buttonText">LANCER</p>
     </div>
 
-    <div class="howToPlayContainer">
-      <img src="images/close.png" class="closeHowToPlay">
-      <h1>Comment jouer à Mentalo&nbsp;?</h1>
-      <div class="chooseSectionHow">
-        <span id="sectionNiveaux" class="sectionBeer"><h4>Niveaux</h4></span>
-        <span id="sectionPartie"class="sectionBeer"><h4>La partie</h4></span>
-        <span id="sectionGage"class="sectionBeer"><h4>Les gages</h4></span>
-      </div>
-      <div class="howToNiveaux">
-        <p>Mentalo est le premier jeu à boire qui pense aussi à Sam ! En indiquant la quantité d'alcool que vous souhaitez boire, le jeu s'adapte à chacun. Pour cela, clique sur les points blancs et sur les pintes pour ajuster ton niveau</p>
-        <br>
-        <p>Nous te conseillons de commencer doucement avec une ou deux pintes. Le niveau influence le nombre de gorgées que tu recevras comme pénalités</p>
-        <img src="images/level1.png">
-        <p>Si tu ne conduis pas et que tu veux boire plus, alors séléctionne le niveau le plus élevé ! Attention, tu recevras + de gorgées lors de la fin de la manche</p>
-        <img src="images/level3.png">
-        <p>Tu ne bois pas d'alcool ? Aucun souci ! Clique sur la première pinte pour l'enlever, tu ne recevras aucune gorgée, mais tu devras quand même faire les gages !</p>
-        <img src="images/level0.png">
-      </div>
-      <div class="howToPartie">
-        <p>Durant la partie, les questions défilent et les joueurs recevront des pénalités. Ce ne sont pas des gorgées à prendre, mais un indicateur sur ce que vous recevrez à la fin de la manche.</p>
-        <img src="images/partie1.png">
-        <p>À la fin du tour, distribuez les pénalités aux joueurs qui en ont reçu grâce aux compteurs</p>
-        <img src="images/partie2.png">
-      </div>
-      <div class="howToGage">
-        <p>Quand un joueur atteint 10 pénalités, la manche est finie. À tour de rôle vous aurez le choix entre deux gages, à vous de choisir ce qui vous convient !</p>
-        <img src="images/gage1.png">
-        <p>Le nombre de gorgeés est calculé en fonction du nombre de pénalités obtenues à cette manche, et en fonction du niveau que tu t'es attribué avant de commencer la partie</p>
-        <img src="images/gage2.png">
-        <p>Tu ne bois pas d'alcool ? Dans ce cas tu as le choix entre deux gages, à toi de voir lequel tu préfères</p>
-        <img src="images/gage3.png">
-      </div>
-    </div>
-
-    <!-- CHANGE PLAYERS LEVEL -->
-    <div class="editPlayerContainer">
-        <h1>Modifier</h1>
-        <div class="editPlayerInner">
-          <input class="inputAddPlayer" placeholder="Axel"></input>
-          <div class="editPlayerLevel">
-            <span id="decreasePlayerLevel">-</span>
-            <img src="images/level1.png">
-            <span id="increasePlayerLevel">+</span>
-          </div>
+    <div class="questionContainer">
+        <p class="questionTitle">Défi</p>
+        <p class="description">Réponds à la question ou bois le nombre de gorgées</p>
+        <p class="question">Femme : tu as 30 secondes pour donner une érection à ton partenaire. Si tu y arrives il prend le nombre de gorgées indiquées. Sinon tu les prends.</p>
+        <p class="nbPoint">nombre de gorgées : 2</p>
+        <div class="closeButton">
+            <p class="closeTxt">Fermer</p>
         </div>
-        <div class="editPlayerValidation">Valider</div>
-        <div class="editPlayerDelete">Supprimer le joueur</div>
     </div>
+      
 
-    <script src="scripts/main.js"></script>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>

@@ -1,0 +1,122 @@
+body{
+    position: relative;
+}
+  
+  /* Placement de la roulette */
+  #roulette{
+    position:absolute;
+    transform: rotate(-100deg);
+  }
+  
+  /* Placement de la fleche */
+  #fleche{
+    position:absolute;
+    margin-left:30%;
+    margin-top:0px;
+    width: 300px;
+      /* Centre de rotation de la flèche. Attention, selon les navigateurs, il faut l'écrire differemment. C'est pourquoi il y a 5 fois la même ligne. */
+    transform-origin: 0%;  /*CSS3 */
+    /*-moz-transform-origin: 32%; /* Firefox */
+    /*-webkit-transform-origin: 32%; /* Webkit */
+    /*-o-transform-origin: 32%; /* Opera */
+    /*-ms-transform-origin: 32%; /* IE 9 */
+  }
+  
+      /* Tester:
+       - ease
+       - linear
+       - ease-in
+       - ease-out
+       - ease-in-out
+       - cubic-bezier(0,4000,0,9000) 
+      */
+  
+.rouletteContainer{
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}      
+
+
+.button{
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 20px;
+}
+
+.buttonText{
+    color: white;
+    font-size: 24px;
+}
+
+.questionContainer{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding: 20px 100px;
+}
+
+.questionTitle{
+    color: white;
+    font-size: 92px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.description{
+    color: grey;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.question{
+    color: white;
+    font-size: 80px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.nbPoint{
+    color: white;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 60px;
+}
+
+.closeButton{
+    width: 420px;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 20px;
+}
+
+.closeTxt{
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
