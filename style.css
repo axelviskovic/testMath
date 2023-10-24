@@ -6,7 +6,7 @@ body{
   /* Placement de la roulette */
   #roulette{
     position:absolute;
-    transform: scale(1.5) rotate(-100deg);
+    transform: scale(1.5);
   }
   
   /* Placement de la fleche */
@@ -115,6 +115,28 @@ body{
     color: white;
     font-size: 64px;
     font-weight: 700;
+}
+
+.timerContainer{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer{
+    color: white;
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+.startButton{
+    width: 500px;
+    height: 200px;
+    background-color: green;
+    border-radius: 20px;
+    margin-bottom: 60px;
+    font-size: 60px;
+    color: white;
 }
 
 *{

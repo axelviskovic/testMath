@@ -30,12 +30,11 @@
 
             const progress = (timestamp - startTime) / duration;
             if (progress < 1) {
-                const currentAngle = startAngle + angle * progress;
+                const currentAngle = startAngle + angle * progress +100;
                 element.style.transform = `rotate(${currentAngle}deg)`;
-                element.style.animationTimingFunction= "ease-out";
                 requestAnimationFrame(step);
             } else {
-                element.style.transform = `rotate(${startAngle + angle}deg)`;
+                element.style.transform = `rotate(${startAngle + angle+100}deg)`;
                 if (complet) complet();
                 setTimeout(() => {
                     questionContainer.style.top="0"  
@@ -62,7 +61,7 @@
         lastNb=x
         a = (360 * x / n + 360 * (x - 1) / n) / 2;
         chooseQuestion(x)
-        animRotation(flecheButton, (360*6) + a, 2000 + (a / 360 * 500));
+        animRotation(flecheButton, (360*8) + a, 3000 + (a / 360 * 500));
     });
 
     closeButton.addEventListener(
@@ -71,7 +70,7 @@
             questionContainer.style.top="300%" 
         }
     )
-    let q
+    let q,t
     function chooseQuestion(nb){
         questionContainer.style.backgroundColor=color[nb]
         questionTitle.textContent=questions[nb].category
@@ -80,11 +79,34 @@
           let m = Math.floor(Math.random() * questions[nb]["questions"].length)
           q = questions[nb]["questions"][m]
         } while(tab.includes(q.question))
+        if(q.chrono){
+          t=q.chrono
+          document.querySelector('.timerContainer').style.display="flex"
+          document.querySelector('.timer').textContent="Compte à rebours : "+t+"s"
+        }
         console.log(q.question)
         tab.push(q.question)
         question.textContent=q.question
     }
 
+    document.querySelector('.startButton').addEventListener('click', function() {
+      startCountdown(t); // Démarrer un compte à rebours de 30 secondes
+  });
+
+  function startCountdown(seconds) {
+      let timer = seconds;
+
+      const countdownInterval = setInterval(function() {
+          console.log(timer); // Afficher le temps restant dans la console
+          timer--;
+          document.querySelector('.timer').textContent="Compte à rebours : "+timer+"s"
+
+          if (timer < 0) {
+              clearInterval(countdownInterval); // Arrêter le compte à rebours
+              document.querySelector('.timer').textContent="Terminé !"
+          }
+      }, 1000); // Actualiser toutes les 1000 millisecondes (1 seconde)
+  }
 
 // QUESTIONS
 
@@ -98,10 +120,11 @@ let questions = [
             "question": "Quel est ton plus grand fantasme ? (2 gorgées)",
           },
           {
-            "question": "Tu aimerais te faire dominer par ton partenaire ? (3 gorgées)",
+            "question": "Tu aimerais te faire dominer par ton/ta partenaire ? (3 gorgées)",
           },
           {
-            "question": "Quelle est la partie du corps de ton partenaire que tu as envie de toucher tout de suite ? (1 gorgée)",
+            "question": "Quelle est la partie du corps de ton/ta partenaire que tu as envie de toucher tout de suite ? (1 gorgée)",
+          
           },
           {
             "question": "Quelle est ta position préférée ? (1 gorgée)",
@@ -116,13 +139,13 @@ let questions = [
             "question": "Quel est l'endroit où tu rêves de faire l'amour ? (2 gorgées)",
           },
           {
-            "question": "Quelle est la date de naissance de ton partenaire ? (5 gorgées)",
+            "question": "Quelle est la date de naissance de ton/ta partenaire ? (5 gorgées)",
           },
           {
             "question": "Quel est le nom de la musique qui passe ? (3 gorgées)",
           },
           {
-            "question": "Quel est le pire redflag chez un partenaire ? (1 gorgée)",
+            "question": "Quel est le pire redflag chez un/e partenaire ? (1 gorgée)",
           },
           {
             "question": "Peux tu donner le prénom de ton meilleur coup ? (3 gorgées)",
@@ -176,7 +199,8 @@ let questions = [
         "regle": "Réalise le défi ou bois le nombre de gorgées indiqué si tu échoues ou refuses.",
         "questions": [
           {
-            "question": "Femme : tu as 30 secondes pour donner une érection à ton partenaire. (2 gorgées)"
+            "question": "Femme : tu as 30 secondes pour donner une érection à ton partenaire. (2 gorgées)",
+            "chrono": 30
           },
           {
             "question": "Ferme les yeux. Ton/ta partenaire caresse une partie de ton corps avec la partie de son corps de son choix et tu dois deviner ce que c'est. (3 gorgées)"
@@ -185,7 +209,7 @@ let questions = [
             "question": "Enlève un vêtement. (5 gorgées)"
           },
           {
-            "question": "Chuchotte à l'oreille de ton partenaire sensuellement ce que tu aimerais qu'il/elle fasse. Il ne doit pas le faire. (2 gorgées)"
+            "question": "Chuchotte à l'oreille de ton/ta partenaire sensuellement ce que tu aimerais qu'il/elle fasse. Il ne doit pas le faire. (2 gorgées)"
           }
           ,
           {
@@ -201,16 +225,17 @@ let questions = [
             "question": "Fais une danse sexy. (3 gorgées)"
           },
           {
-            "question": "Ferme les yeux et laisse ton partenaire te toucher. (4 gorgées)"
+            "question": "Ferme les yeux et laisse ton/ta partenaire te toucher. (4 gorgées)"
           },
           {
-            "question": "Envoie 'jai envie de toi' à un contact choisi par ton partenaire. (4 gorgées)"
+            "question": "Envoie 'jai envie de toi' à un contact choisi par ton/ta partenaire. (4 gorgées)"
           },
           {
-            "question": "Essaie de faire sourire ton partenaire en moins de 40 secondes. (2 gorgées)"
+            "question": "Essaie de faire sourire ton/ta partenaire en moins de 40 secondes. (2 gorgées)",
+            "chrono": 40
           },
           {
-            "question": "Assieds toi sur les genoux de ton partenaire pendant 3 tours. (4 gorgées)"
+            "question": "Assieds toi sur les genoux de ton/ta partenaire pendant 3 tours. (4 gorgées)"
           },
           {
             "question": "Le premier qui enlève un vêtement distribue 5 gorgées à l'autre."
@@ -220,6 +245,14 @@ let questions = [
           },
           {
             "question": "Enlève un vêtement. (4 gorgées)"
+          },
+          {
+            "question": "Pendant 2 minutes tu dois faire tout ce que ton/ta partenaire te dis de faire. (3 gorgées)",
+            "chrono": 120
+          },
+          {
+            "question": "Fixe ton/ta partenaire dans les yeux pendant 1 minute. (2 gorgées)",
+            "chrono": 60
           }
         ]
       },
@@ -231,32 +264,39 @@ let questions = [
             "question": "Enlève un vêtement. (2 gorgées)"
           },
           {
-            "question": "Enlêve un vêtement de ton partenaire sans utiliser tes mains. (3 gorgées)"
+            "question": "Enlêve un vêtement de ton/ta partenaire sans utiliser tes mains. (3 gorgées)"
           },
           {
             "question": "Vous prenez tous 3 gorgées !"
           },
           {
-            "question": "Pose ta main sur le sexe de ton partenaire pendant 3 tours. (2 gorgées)"
+            "question": "Pose ta main sur le sexe de ton/ta partenaire pendant 3 tours. (2 gorgées)"
           },
           {
-            "question": "Lèche le cou de ton partenaire sensuellement. (3 gorgées)"
+            "question": "Lèche le cou de ton/ta partenaire sensuellement. (3 gorgées)"
           },
           {
-            "question": "Caresse la cuisse de ton partenaire pendant le prochain tour. (4 gorgées)"
+            "question": "Caresse la cuisse de ton/ta partenaire pendant le prochain tour. (4 gorgées)"
           },
           {
-            "question": "Lèche la partie de ton choix du corps de ton partenaire. (2 gorgées)"
+            "question": "Lèche la partie de ton choix du corps de ton/ta partenaire. (2 gorgées)"
           },
           {
-            "question": "Caresse la poitrine de ton partenaire. (2 gorgées)"
+            "question": "Caresse la poitrine de ton/ta partenaire. (2 gorgées)"
           },
           {
-            "question": "Mime une position que tu aimes faire avec ton partenaire. (3 gorgées)"
+            "question": "Mime une position que tu aimes faire avec ton/ta partenaire. (3 gorgées)"
           },
           {
             "question": "La personne qui a fait à manger en dernier peut distribuer 3 gorgées."
-          }
+          },
+          {
+            "question": "Demande à ton/ta partenaire si tu peux l'embrasser. (2 gorgées)"
+          },
+          {
+            "question": "Tu as 40 secondes pour convaincre ton/ta partenaire d'enlever un vêtement. (4 gorgées)",
+            "chrono": 40
+          }  
         ]
       },
       {
@@ -265,6 +305,7 @@ let questions = [
         "questions": [
           {
             "question": "Fais un massage à ton/ta partenaire pendant 1 minute, à l'endroit de son choix",
+            "chrono": 60
           },
           {
             "question": "Pour ou contre le couple libre ?",
@@ -273,19 +314,26 @@ let questions = [
             "question": "Faites vous un câlin (c bo lamour)",
           },
           {
-            "question": "Resers à boire à ton partenaire",
+            "question": "Resers à boire à ton/ta partenaire",
           },
           {
-            "question": "Si tu t'appelles Axel tu as le droit à un massage gratuit",
+            "question": "Si tu t'appelles Axel tu as le droit à un massage gratuit de 1 minute",
+            "chrono": 60
           },
           {
             "question": "Quoicoubeh mdrrr",
           },
           {
-            "question": "Relance la roue",
+            "question": "Fais un bisou à ton/ta partenaire où tu veux",
           },
           {
-            "question": "Relance la roue",
+            "question": "Choisis le prochain son qui passe",
+          },
+          {
+            "question": "Fais un compliment à ton/ta partenaire",
+          },
+          {
+            "question": "Plutôt ne plus jamais faire l'amour ou ne plus jamais écouter de musique",
           },
           {
             "question": "Relance la roue",
