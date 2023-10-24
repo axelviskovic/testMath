@@ -18,7 +18,7 @@
     const color = ["#331fc8", "#cb4945", "#3bae4e", "#c8c842","#c561b9"]
 
     // Animation de la rotation
-    function animRotation(element, angle, duree, easing, complet) {
+    function animRotation(element, angle, duree, complet) {
         let startTime;
         const startAngle = 0;
         const duration = duree;
@@ -32,6 +32,7 @@
             if (progress < 1) {
                 const currentAngle = startAngle + angle * progress;
                 element.style.transform = `rotate(${currentAngle}deg)`;
+                element.style.animationTimingFunction= "ease-out";
                 requestAnimationFrame(step);
             } else {
                 element.style.transform = `rotate(${startAngle + angle}deg)`;
@@ -61,7 +62,7 @@
         lastNb=x
         a = (360 * x / n + 360 * (x - 1) / n) / 2;
         chooseQuestion(x)
-        animRotation(flecheButton, (360*5) + a, 1500 + (a / 360 * 500), "ease");
+        animRotation(flecheButton, (360*6) + a, 2000 + (a / 360 * 500));
     });
 
     closeButton.addEventListener(
@@ -83,6 +84,7 @@
         tab.push(q.question)
         question.textContent=q.question
     }
+
 
 // QUESTIONS
 
@@ -163,6 +165,9 @@ let questions = [
           },
           {
             "question": "Je n'ai jamais eu de rapport homosexuel. (4 gorgées)",
+          },
+          {
+            "question": "Je n'ai mis mon doigt dans un anus. (4 gorgées)",
           }
         ]
       },

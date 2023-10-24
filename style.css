@@ -15,6 +15,7 @@ body{
     margin-left:30%;
     margin-top:0px;
     width: 300px;
+    
       /* Centre de rotation de la flèche. Attention, selon les navigateurs, il faut l'écrire differemment. C'est pourquoi il y a 5 fois la même ligne. */
     transform-origin: 0%;  /*CSS3 */
     /*-moz-transform-origin: 32%; /* Firefox */
