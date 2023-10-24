@@ -15,6 +15,7 @@
     let a = 0;
     let x = 1;
     let tab = [];
+    const color = ["#331fc8", "#cb4945", "#3bae4e", "#c8c842","#c561b9"]
 
     // Animation de la rotation
     function animRotation(element, angle, duree, easing, complet) {
@@ -59,7 +60,6 @@
         } while (x === lastNb);
         lastNb=x
         a = (360 * x / n + 360 * (x - 1) / n) / 2;
-        console.log(x)
         chooseQuestion(x)
         animRotation(flecheButton, (360*5) + a, 1500 + (a / 360 * 500), "ease");
     });
@@ -72,6 +72,7 @@
     )
     let q
     function chooseQuestion(nb){
+        questionContainer.style.backgroundColor=color[nb]
         questionTitle.textContent=questions[nb].category
         description.textContent=questions[nb].regle
         do{
@@ -119,7 +120,13 @@ let questions = [
             "question": "Quel est le nom de la musique qui passe ? (3 gorgées)",
           },
           {
-            "question": "Quel est le pire redflag chez un partenaire ? (1 gorgées)",
+            "question": "Quel est le pire redflag chez un partenaire ? (1 gorgée)",
+          },
+          {
+            "question": "Peux tu donner le prénom de ton meilleur coup ? (3 gorgées)",
+          },
+          {
+            "question": "Quel est le nom de la musique qui passe ? (2 gorgées)",
           }
         ]
       },
@@ -147,6 +154,15 @@ let questions = [
           },
           {
             "question": "Je n'ai jamais été la première fois de quelqu'un. (4 gorgées)",
+          },
+          {
+            "question": "Je n'ai jamais fait d'anulingus. (2 gorgées)",
+          },
+          {
+            "question": "Je n'ai jamais payé pour du sexe (3 gorgées)",
+          },
+          {
+            "question": "Je n'ai jamais eu de rapport homosexuel. (4 gorgées)",
           }
         ]
       },
@@ -196,6 +212,9 @@ let questions = [
           },
           {
             "question": "Scroll dans ta galerie au hasard et montre la photo. (4 gorgées)"
+          },
+          {
+            "question": "Enlève un vêtement. (4 gorgées)"
           }
         ]
       },
@@ -229,6 +248,9 @@ let questions = [
           },
           {
             "question": "Mime une position que tu aimes faire avec ton partenaire. (3 gorgées)"
+          },
+          {
+            "question": "La personne qui a fait à manger en dernier peut distribuer 3 gorgées."
           }
         ]
       },
@@ -249,10 +271,10 @@ let questions = [
             "question": "Resers à boire à ton partenaire",
           },
           {
-            "question": "Relance la roue",
+            "question": "Si tu t'appelles Axel tu as le droit à un massage gratuit",
           },
           {
-            "question": "Relance la roue",
+            "question": "Quoicoubeh mdrrr",
           },
           {
             "question": "Relance la roue",
