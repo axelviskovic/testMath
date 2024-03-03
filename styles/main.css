@@ -58,6 +58,8 @@ h2{
     margin: 0 auto;
     padding: 4%;
     margin-bottom: 80px;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .inputAddPlayer{
@@ -431,7 +433,7 @@ h2{
 
 @media screen and (max-width:1610px) {
     .containerAddPlayer{
-        width: 70%;
+        width: 80%;
     }
 
     .btnText{
@@ -439,13 +441,17 @@ h2{
     }
 
     .pageChallenge{
-        width: 70%;
+        width: 80%;
     }
 }
 
 @media screen and (max-width:1350px) {
     .containerlistPlayer{
-        width: 70%;
+        width: 80%;
+    }
+
+    .containerAddPlayer .inputAddPlayer{
+        width: 60%;
     }
 }
 
