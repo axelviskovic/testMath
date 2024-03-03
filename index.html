@@ -1,38 +1,102 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Jeu</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+<html lang="fr">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Sékisa</title>
+    <meta name="description" content="description de la page"/>
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <img id="settingsOpen" src="images/settings.png">
+    <!-- Page de séléction des joueurs -->
+    <div class="pagePlayerSelect">
+        <h1>Sékisa ?</h1>
 
-    <div class="rouletteContainer">
-        <img src="roulette.png" id="roulette">
-        <img id="fleche" src="arrow.png" alt="Fleche manquante, en chercher une autre" height="50" width="400">
-    </div>
-
-    <div class="button">
-        <p class="buttonText">LANCER</p>
-    </div>
-
-    <div class="questionContainer">
-        <p id="prenom" class="questionTitle">Défi</p>
-        <p class="description">Réponds à la question ou bois le nombre de gorgées</p>
-        <p class="question">Femme : tu as 30 secondes pour donner une érection à ton partenaire. Si tu y arrives il prend le nombre de gorgées indiquées. Sinon tu les prends.</p>
-        <div class="timerContainer">
-            <p class="timer">Compte à rebours : </p>
-            <button class="startButton">Démarrer</button>
+        <div class="containerAddPlayer">
+          <input placeholder="Entrer un joueur" maxlength="20" class="inputAddPlayer"></input>
+          <button class="buttonAddPlayer"><p>+</p></button>
         </div>
-        <div class="closeButton">
-            <p class="closeTxt">Fermer</p>
-        </div>
-    </div>
-      
 
-    <script src="script.js"></script>
-</body>
+        <div class="containerlistPlayer">
+        </div>
+
+        <div class="button1 buttonValidationPlayer"><h1 class="btnText">Lancer la partie</h1></div>
+    </div>
+
+    <!-- FILL QUESTIONS SCREEN -->
+    <div class="fillQuestionScreen">
+      <h1 class="prenom">Prenom</h1>
+      <div class="selectPlayer">
+        
+        <h2>C'est à ton tour</h2>
+        <button class="lesgo button1"><h1 class="btnText">Let's go</h1></button>
+      </div>
+      <div class="fillQuestion">
+        <!-- <h2 id="question1" class="questionTitle">Comment vont-je bonsoir a tous bitch</h2>
+        <input id="answer1" class="inputAddPlayer inGame" type="text"></input>
+        <h2 id="question2" class="questionTitle">Comment vont-je bonsoir a tous bitch</h2>
+        <input id="answer2" class="inputAddPlayer inGame" type="text"></input>
+        <h2 id="question3" class="questionTitle">Comment vont-je bonsoir a tous bitch</h2>
+        <input id="answer3" class="inputAddPlayer inGame" type="text"></input> -->
+        <button class="suivant button1"><h1 class="btnText">Suivant</h1></button>
+      </div>
+    </div>
+
+    <!-- SHOW SCREEN ANSWERS -->
+    <div class="showAnswersScreen">
+      <h2 id="showQuestion" class="questionTitle">question à compléter</h2>
+      <h3 id="showAnswer" class="reponseH3">Réponse à compléter</h3>
+      <button id="speak">Répéter</button>
+      <button class="button1 buttonAnswer"><h1 class="btnText">Réponse</h1></button>
+    </div>
+    <div class="absoluteAnswer">
+      <h2 id="absoluteAnswerText">Réponse : Ta mère</h1>
+      <button class="button1 absoluteShowBtn"><h1 class="btnText">Suivant</h1></button>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="settingsContainer">
+      <img id="settingsBtnClose" src="images/close.png">
+      <h2>Paramètres</h2>
+      <div class="iconSettingsContainer">
+        <div id="sonSetting" class="iconContainer">
+          <div class="croixRougeSon"></div>
+          <img id="soundIcon" src="images/soundIcon.webp">
+        </div>
+        <div id="lgbtSetting" class="iconContainer">
+          <div class="croixRougeLgbt"></div>
+          <img id="lgbtIcon" src="images/lgbt.png">
+        </div>  
+        </div>
+      <h3>Nombre de questions par personne</h3>
+      <div class="nbQuestionSettings">
+        <div data="3" class="nbQuestionCase nbQuestionSelected"><h4>3</h4></div>
+        <div data="5" class="nbQuestionCase"><h4>5</h4></div>
+        <div data="7" class="nbQuestionCase"><h4>7</h4></div>
+        <div data="10" class="nbQuestionCase"><h4>10</h4></div>
+      </div>
+    </div>
+
+    <!-- SOUNDS -->
+    <audio class="sound" src="sounds/fart.mp3"></audio>
+    <audio class="sound" src="sounds/fart2.mp3"></audio>
+    <audio class="sound" src="sounds/fart3.mp3"></audio>
+    <audio class="sound" src="sounds/fart4.mp3"></audio>
+    <audio class="sound" src="sounds/fart5.mp3"></audio>
+    <audio class="sound" src="sounds/bavwing.wav"></audio>
+    <audio class="sound" src="sounds/bbbbing.wav"></audio>
+    <audio class="sound" src="sounds/boing.wav"></audio>
+    <audio class="sound" src="sounds/question.wav"></audio>
+    <audio class="sound" src="sounds/question2.wav"></audio>
+    <audio class="sound" src="sounds/slip fall.wav"></audio>
+    <audio class="sound" src="sounds/slip.wav"></audio>
+    <audio class="sound" src="sounds/wobble.wav"></audio>
+
+    
+
+    <script src="scripts/main.js"></script>
+  </body>
 </html>

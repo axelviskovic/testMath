@@ -1,0 +1,479 @@
+body{
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    min-height: 600px;
+    background: linear-gradient(#7abddc, #357a94);
+    margin: 0;
+    padding: 0;
+    font-size: 26px;
+    position: relative;
+}
+
+textarea:hover, input:hover, textarea:active, input:active, textarea:focus, input:focus {
+    outline:0px !important;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    font-size: 90px;
+    color: white;
+    font-family: Orangina;
+    text-align: center;
+}
+
+h2{
+    font-size: 48px;
+    color: white;
+    font-family: Orangina;
+    text-align: center;
+}
+
+
+.btnText{
+    font-size: 60px;
+    color: #F94A4A;
+    font-family: Orangina;
+}
+
+#logoMentalo{
+    display: block;
+    width: 760px;
+    height: auto;
+    margin: 20px auto;
+}
+
+/* Container Add Player */
+
+
+.containerAddPlayer{
+    width: 50%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    border: 15px solid white;
+    margin: 0 auto;
+    padding: 4%;
+    margin-bottom: 80px;
+}
+
+.inputAddPlayer{
+    display: inline-block;
+    width: 60%;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    font-size: 56px;
+    font-family: Orangina;
+    color: white;
+    text-align: center;
+    margin: 0 5%;
+    transition: all .4s ease;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 5px solid transparent;
+}
+
+.inputAddPlayer.inGame{
+    background-color: white;
+    color: black;
+    margin: 0;
+}
+
+.inputAddPlayer.inGame:hover{
+    box-shadow: 0 0 30px #0000008c;
+}
+
+.inputAddPlayer:hover{
+    box-shadow: 0 0 10px #00000020;
+    border-radius: 20px;
+}
+
+.inputAddPlayer::placeholder{
+    font-family: Orangina;
+    font-size: 56px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.inputAddPlayer::after{
+    border: none;
+}
+
+.noNameInput{
+    border: 5px solid #F94A4A60;
+    box-shadow: 0px 0px 20px #F94A4A ;
+    animation-name: noName;
+    animation-duration: .3s;
+}
+
+@keyframes noName {
+    0%{
+        margin-left: 5%;
+    }
+    25%{
+        margin-left: 6%;
+    }
+    50%{
+        margin-left: 5%;
+    }
+    75%{
+        margin-left: 6%;
+    }
+    100%{
+        margin-left: 5%;
+    }
+}
+
+.buttonAddPlayer{
+    display: inline-block;
+    width: 15%;
+    height: 100px;
+    background-color: #F94A4A;
+    border: none;
+    border-radius: 100%;
+    color: white;
+    font-size: 68px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    transition: all .2s ease;
+}
+
+.buttonAddPlayer:hover{
+    transform: rotate(90deg);
+}
+
+.buttonAddPlayer p{
+    margin: 0;
+}
+
+
+
+/* List player */
+
+.containerlistPlayer{
+    width: 50%;
+    min-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.subTitle{
+    width: 20%;
+    display: inline;
+    text-align: left;
+    font-size: 42px;
+    color: white;
+    font-family: Orangina;
+}
+
+
+.rowPlayerList, .rowPlayerListMain{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.subTitlePlayer{
+    text-align: left;
+    font-size: 36px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.button1{
+    width : 50%;
+    height: 200px;
+    margin: 0 auto;
+    background-color: white;
+    border: 10px solid #FF986B;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+    transition: all .4s ease;
+}
+
+.button1:hover{ 
+    background-color: #ececec;
+    width: 52%;
+}
+
+/* SELECTION JOUEUR */
+
+.fillQuestionScreen{
+   width: 80%;
+   margin: 0 auto; 
+   display: none;
+}
+
+.selectPlayer, .fillQuestion, .fillQuestionScreen, .showAnswersScreen{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.showAnswersScreen{
+    display: none;
+    padding: 0 10%;
+}
+
+.fillQuestion{
+    display: none;
+}
+
+.selectPlayer h2, .fillQuestion h2{
+    color: white
+}
+
+.selectPlayer .button1, .fillQuestion .button1, .button1{
+    font-size: 6rem;
+}
+
+.fillQuestion input{
+    width: 100%;
+    height: 80px;
+    padding: 1rem;
+    font-size: 1.2em;
+    font-family: Orangina;
+}
+
+.suivant{
+    margin-top: 24px;
+}
+
+.newDiv{
+    width: 100%;
+}
+
+
+/* ANSWER SCREEN */ 
+
+#speak{
+    width: 200px;
+    height: 80px;
+    border-radius: 20px;
+    outline: none;
+    border: 6px solid white;
+    cursor: pointer;
+    margin-bottom: 12px;
+    font-family: Orangina;
+    font-size: 18px;
+}
+
+.reponseH3{
+    color: white;
+    font-size: 42px;
+    font-family: Orangina;
+}
+
+.absoluteAnswer{
+    position: absolute;
+    border: 10px solid white;
+    width: 60%;
+    height: 400px;
+    background-color: black;
+    top: 100px;
+    left: 20%;
+    display: none;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.button2{
+    width : 50%;
+    height: 200px;
+    margin: 0 auto;
+    background-color: white;
+    border: 10px solid #FF986B;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+    transition: all .4s ease;
+}
+
+.button1:hover{ 
+    background-color: #ececec;
+    width: 52%;
+}
+
+
+/* SETTINGS */
+
+.settingsContainer{
+    width: 70%;
+    height: 400px;
+    background-color: #9e9e9e;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 15%;
+    border-radius: 20px;
+    border: 5px solid black;
+}
+
+#settingsOpen{
+    position: absolute;
+    width: 60px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.settingsContainer h2{
+    margin: 20px 0;
+    color: black;
+}
+
+.settingsContainer h3, h4{
+    font-family: Orangina;
+}
+
+.iconSettingsContainer{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.iconContainer{
+    cursor: pointer;
+    position: relative;
+}
+
+.croixRougeSon, .croixRougeLgbt{
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    left:0;
+    height: 5px;
+    background-color: red;
+    transform: rotate(-45deg);
+}
+
+.croixRougeLgbt{
+    display: block;
+    width: 110%;
+}
+
+#settingsBtnClose{
+    width: 30px;
+    height: 30px;
+    margin: 10px 0 0 10px;
+    cursor: pointer;
+}
+
+.iconSettingsContainer img{
+    width: auto;
+    height: 50px;
+}
+
+.settingsContainer h3{
+    text-align: center;
+}
+
+.nbQuestionSettings{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nbQuestionCase{
+    width: 100px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all ease .4s;
+}
+
+.nbQuestionCase:hover:not(.nbQuestionSelected){
+    background-color: #fff8da;
+}
+
+.nbQuestionSelected{
+    background-color: #ffe98b;
+}
+
+
+
+@font-face {
+    font-family: Orangina;
+    src: url(../fonts/FredokaOne-Regular.ttf) format("truetype");
+}
+/*../fonts/Orangina-Demo.ttf*/
+@font-face {
+    font-family: Fredo;
+    src: url(../fonts/FredokaOne-Regular.ttf) format("truetype");
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width:1610px) {
+    .containerAddPlayer{
+        width: 70%;
+    }
+
+    .btnText{
+        font-size: 50px;
+    }
+
+    .pageChallenge{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:1350px) {
+    .containerlistPlayer{
+        width: 70%;
+    }
+}
+
+
+@media screen and (max-width:1150px) {
+    .firstChallenge, .secondChallenge{
+        width: 200px;
+        height: 200px;
+    }
+
+    .firstChallenge h3, .secondChallenge h3{
+        font-size: 18px;
+    }
+
+    .inputAddPlayer{
+        width: 65%;
+    }
+
+    .inputAddPlayer::placeholder{
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .containerlistPlayer{
+        width: 80%;
+    }
+    .pageGame{
+        width: 80%;
+    }
+}
