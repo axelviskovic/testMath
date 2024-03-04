@@ -23,7 +23,7 @@ data = [
 
 'Quel est ton artiste préféré?',
 
-'Quel est le pays ou tu aurais voulu vivre ?',
+'Quel est le pays où tu aurais voulu vivre ?',
 
 'Quelle est ta couleur préférée ?',
 
@@ -37,7 +37,7 @@ data = [
 
 'Quel est ton deuxième prénom?',
 
-'Quel est ton plat préféré',
+'Quel est ton plat préféré ?',
 
 'Combien pèses-tu?',
 
@@ -107,15 +107,15 @@ data = [
 
 "Quel est l'endroit le plus fou où tu aies fait l'amour ?",
 
-"Quel est le dernier cadeau que tu aies offert à quelqu'un",
+"Quel est le dernier cadeau que tu as offert à quelqu'un ?",
 
-"Quelle est la dernière série que tu aies regardée ?",
+"Quelle est la dernière série que tu as regardée ?",
 
-"Quel est le dernier film que tu aies regardé ?",
+"Quel est le dernier film que tu as regardé ?",
 
 "À quand remonte la première fois que tu aies fumé ?",
 
-"Qui est le dernier artiste que tu aies vu en concert / festival ?",
+"Qui est le dernier artiste que tu as vu en concert / festival ?",
 
 "Quel est le plus long trajet que tu aies fait dans ta vie ?",
 
@@ -163,11 +163,11 @@ data = [
 
 "Quel est le plat que tu ne pourrais jamais manger ?",
 
-"Quel est le dernier film ou série que tu as binge-watché ?",
+"Quel est le dernier film ou série que tu as binge-watché (regardé d'une traite) ?",
 
 "Si tu pouvais rencontrer un personnage fictif, qui serait-ce ?",
 
-"Quel est le meilleur conseil que tu donnerais à ton moi plus jeune ?",
+"Quel est le meilleur conseil que tu donnerais à ton toi plus jeune ?",
 
 "Si tu devais créer une entreprise, quel serait le domaine d'activité ?",
 
@@ -222,7 +222,6 @@ data = [
 
 
 
-
 // CREATION LISTE JOUEURS
 
 const buttonAddPlayer = document.querySelector('.buttonAddPlayer')
@@ -232,6 +231,10 @@ let listeJoueur= []
 
 buttonAddPlayer.style.height=buttonAddPlayer.offsetWidth+"px"
 
+if(sessionStorage.getItem('listeJoueur')){
+    listeJoueur=JSON.parse(sessionStorage.getItem('listeJoueur'))
+    createListJoueur(listeJoueur)
+}
 
 
 function addPlayer(){
@@ -242,9 +245,10 @@ function addPlayer(){
     else{
         listeJoueur.push(inputAddPlayer.value)
         inputAddPlayer.classList.remove('noNameInput')
-        createListJoueur(listeJoueur)  
-        inputAddPlayer.value=''  
-        inputAddPlayer.focus()    
+        createListJoueur(listeJoueur) 
+        sessionStorage.setItem('listeJoueur', JSON.stringify(listeJoueur)) 
+        inputAddPlayer.value=''
+        inputAddPlayer.focus()
     }      
 }
 
@@ -261,10 +265,18 @@ function createListJoueur(liste){
         newPlayer.classList.add('subTitlePlayer')
         newPlayer.innerText = joueur
 
-        newDiv.appendChild(newPlayer)        
-
+        let removePlayerIcone = document.createElement('img')
+        removePlayerIcone.setAttribute('src', 'images/close.png')
+        removePlayerIcone.classList.add('removePlayerBtn')
+        removePlayerIcone.addEventListener('click',()=>{
+            listeJoueur.splice(i, 1)
+            createListJoueur(listeJoueur)
+            sessionStorage.setItem('listeJoueur', JSON.stringify(listeJoueur))
+        })
+        newDiv.appendChild(newPlayer)  
+        newDiv.appendChild(removePlayerIcone)      
         containerlistPlayer.appendChild(newDiv)
-        sessionStorage.setItem('listeJoueur', JSON.stringify(listeJoueur))
+        
     })
 }
 
@@ -277,12 +289,14 @@ function createListJoueur(liste){
 const sounds = document.querySelectorAll('.sound')
 const settingsContainer = document.querySelector('.settingsContainer')
 const nbQuestionCase = document.querySelectorAll('.nbQuestionCase')
+const writeContainer = document.querySelector('.writeContainer')
 
 let soundOk = true
 let isLgbt = false
 
 nbQuestionCase.forEach((el)=>{
     el.addEventListener('click',(event)=>{
+        playSound()
         if(!event.target.classList.contains('nbQuestionSelected')){
             document.querySelector('.nbQuestionSelected').classList.remove('nbQuestionSelected')
             el.classList.add('nbQuestionSelected')
@@ -301,6 +315,9 @@ function playSound(){
 document.querySelector('#settingsOpen').addEventListener('mousedown',()=>{playSound();settingsContainer.style.display="flex"})
 document.querySelector('#settingsBtnClose').addEventListener('mousedown',()=>{playSound();settingsContainer.style.display="none"})
 
+document.querySelector('#writeOpen').addEventListener('mousedown',()=>{playSound();writeContainer.style.display="flex"})
+document.querySelector('#writeBtnClose').addEventListener('mousedown',()=>{playSound();writeContainer.style.display="none"})
+
 croixRougeSon = document.querySelector('.croixRougeSon')
 croixRougeLgbt = document.querySelector('.croixRougeLgbt')
 
@@ -316,7 +333,7 @@ document.querySelector('#sonSetting').addEventListener('mousedown',()=>{
     }
 })
 
-document.querySelector('#lgbtIcon').addEventListener('mousedown',()=>{
+document.querySelector('#lgbtSetting').addEventListener('mousedown',()=>{
     playSound()
     if(isLgbt==true){
         croixRougeLgbt.style.display="block"
@@ -349,6 +366,7 @@ const speak = document.querySelector('#speak')
 
 
 let listeQuestions = []
+let randomQuestions = []
 let listeAnswers = []
 let randomAnswers = []
 let questionsFaites = []
@@ -381,7 +399,7 @@ function createListQuestion(){
         newDiv.innerHTML=inputQuestion+createInput
         newDiv.classList.add('newDiv')
         fillQuestion.insertBefore(newDiv, suivant)
-        document.querySelector('#question'+(i+1)).textContent=listeQuestions[i+((seaki-1)*setNbQuestion)]
+        document.querySelector('#question'+(i+1)).textContent=randomQuestions[i+((seaki-1)*setNbQuestion)]
         nbCreateQuestion++
     }
 }
@@ -431,11 +449,18 @@ function montreReponses(){
         seaki=1
         nbQuestion=1
         tourAnswer=1
+        listeJoueur.length=0
+        randomQuestions.length=0
         for(let i=0; i<listeJoueur.length; i++){
             for(let i=0; i<setNbQuestion; i++){
                 let rand = Math.floor(Math.random() * data.length);
                 listeQuestions.push(data[rand])
             }
+        }
+        randomQuestions = [...listeQuestions];
+        for (let i = randomQuestions.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [randomQuestions[i], randomQuestions[j]] = [randomQuestions[j], randomQuestions[i]];
         }
         showAnswersScreen.style.display="none"
         selectPlayer.style.display="flex"
@@ -521,25 +546,34 @@ suivant.addEventListener('click',()=>{
 // START GAME
 buttonValidationPlayer.addEventListener('click',()=>{
     playSound()
+    document.querySelector('#settingsOpen').style.display="none"
+    document.querySelector('#writeOpen').style.display="none"
     inputAddPlayer.classList.remove('noNameInput')
     if(listeJoueur.length>2){
         pagePlayerSelect.style.display="none"
         fillQuestionScreen.style.display="block"
+        
         for(let i=0; i<listeJoueur.length; i++){
-            questionsFaites.length=0
+            
             for(let i=0; i<setNbQuestion; i++){
-                let newQuestion 
-                do{
-                    let rand = Math.floor(Math.random() * data.length);
-                    newQuestion = data[rand]
-                }
-                while(questionsFaites.includes(newQuestion))
-                listeQuestions.push(newQuestion)
-                questionsFaites.push(newQuestion)
-                
+                if(listeQuestions.length!=listeJoueur.length * setNbQuestion){
+                    let newQuestion 
+                    do{
+                        let rand = Math.floor(Math.random() * data.length);
+                        newQuestion = data[rand]
+                    }
+                    while(questionsFaites.includes(newQuestion))
+                    listeQuestions.push(newQuestion)
+                    questionsFaites.push(newQuestion)
+                    }
                 }
             }
-        answerThis(listeJoueur[seaki-1])
+        randomQuestions = [...listeQuestions];
+        for (let i = randomQuestions.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [randomQuestions[i], randomQuestions[j]] = [randomQuestions[j], randomQuestions[i]];
+        }
+        answerThis(listeJoueur[seaki-1])    
     }
     else{
         inputAddPlayer.classList.add('noNameInput')
@@ -555,22 +589,46 @@ lesgo.addEventListener('click',()=>{
     }
 })
 
+// WRITE QUESTION
 
+const btnWriteQuestion = document.querySelector('.writeQuestion')
+const writeQuestionInput = document.querySelector('#writeQuestionInput')
+const nbQuestionWritten = document.querySelector('#nbQuestionWritten')
 
-window.addEventListener('beforeunload', function (e) {
-    // Message de confirmation personnalisé
-    var confirmationMessage = 'Êtes-vous sûr de vouloir quitter la page ?';
+let tabQuestionWritten = 0
 
-    // (Standard) Pour les navigateurs récents
-    if (typeof e === 'undefined') {
-        e = window.event;
+btnWriteQuestion.addEventListener('click',()=>{
+    writeQuestionInput.classList.remove('noNameInput') 
+    nbQuestionWritten.style.display="none"
+    if(writeQuestionInput.value!=""){
+        listeQuestions.push(writeQuestionInput.value)
+        tabQuestionWritten++
+        writeQuestionInput.value=""
+        nbQuestionWritten.style.display="block"
+        nbQuestionWritten.textContent="Question envoyée ! Total : "+listeQuestions.length
     }
-
-    // Pour les navigateurs modernes
-    if (e) {
-        e.returnValue = confirmationMessage;
+    else{
+        writeQuestionInput.classList.add('noNameInput') 
     }
+})
 
-    // Pour les navigateurs obsolètes
-    return confirmationMessage;
-});
+
+
+
+// window.addEventListener('beforeunload', function (e) {
+//     // Message de confirmation personnalisé
+//     var confirmationMessage = 'Êtes-vous sûr de vouloir quitter la page ?';
+
+//     // (Standard) Pour les navigateurs récents
+//     if (typeof e === 'undefined') {
+//         e = window.event;
+//     }
+
+//     // Pour les navigateurs modernes
+//     if (e) {
+//         e.returnValue = confirmationMessage;
+//     }
+
+//     // Pour les navigateurs obsolètes
+//     return confirmationMessage;
+// });
