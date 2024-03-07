@@ -1,7 +1,7 @@
 // Questions
 
 data = [
-'Qui ici aimerais-tu pécho ?',
+'Qui ici aimerais tu pécho ?',
 
 'Quelle personnalité devrait devenir président de la république française selon toi ?',
 
@@ -11,15 +11,15 @@ data = [
 
 'Quelle est ta date de naissance ?',
 
-'Si tu pouvais baiser une personne sur cette planète qui serait-ce ?',
+'Si tu pouvais baiser une personne sur cette planète qui serait ce ?',
 
-'Tu as adopté un chien, comme l’appelles-tu ?',
+'Tu as adopté un chien, comme l’appelles tu ?',
 
-'Si tu pouvais te renommer, comment t’appellerais-tu ?',
+'Si tu pouvais te renommer, comment t’appellerais tu ?',
 
 'Qu’est ce que tu bois comme mélange / marque d’alcool en soirée ?',
 
-'Quel prix max mettrais-tu pour des chaussures ?',
+'Quel prix max mettrais tu pour des chaussures ?',
 
 'Quel est ton artiste préféré?',
 
@@ -39,19 +39,19 @@ data = [
 
 'Quel est ton plat préféré ?',
 
-'Combien pèses-tu?',
+'Combien pèses tu?',
 
 'Quelle est ta taille?',
 
-'Qu’as-tu fais de beau hier ?',
+'Qu’as tu fais de beau hier ?',
 
-'Si tu pouvais avoir un super pouvoir quel serait-il ?',
+'Si tu pouvais avoir un super pouvoir quel serait il ?',
 
 'Quelle est la durée max que tu aies faite sans dormir ?',
 
 'Combien as tu eu de partenaires sexuels',
 
-'À quel âge as-tu fais ta première fois ?',
+'À quel âge as tu fais ta première fois ?',
 
 'Comment s’appelle le nom de ta rue?',
 
@@ -69,7 +69,7 @@ data = [
 
 'Comment s’appelle la dernière personne avec qui tu aies eu un rapport sexuel ?',
 
-'Combien de drogues (alcool compris, café/sucre pas compris) as-tu essayé dans ta vie ?',
+'Combien de drogues (alcool compris, café/sucre pas compris) as tu essayé dans ta vie ?',
 
 'À quand remonte ta dernière cuite ? (Approximativement)',
 
@@ -85,7 +85,7 @@ data = [
 
 'Raconte une chose folle qui t’est arrivée',
 
-'Combien de personnes dans cette pièce as-tu déjà embrassé ?',
+'Combien de personnes dans cette pièce as tu déjà embrassé ?',
 
 'Quel est le prénom de ta daronne ?',
 
@@ -119,7 +119,7 @@ data = [
 
 "Quel est le plus long trajet que tu aies fait dans ta vie ?",
 
-"Combien as-tu de frère et soeur ?",
+"Combien as tu de frère et soeur ?",
 
 "Quel est l'artiste que tu aimes le moins ?",
 
@@ -135,37 +135,37 @@ data = [
 
 "Quelles sont tes prochaines vacances prévues ?",
 
-"Que penses-tu de la situation économique en Argentine depuis la fin du 20ème siècle ?",
+"Que penses tu de la situation économique en Argentine depuis la fin du 20ème siècle ?",
 
 "Si tu devais mettre une baffe à quelqu'un ici tu choisirais qui ?",
 
 "Qu'est ce que tu dirais à ton ex si tu le/la croisais ?",
 
-"Si tu pouvais voyager dans le temps, quelle époque visiterais-tu ?",
+"Si tu pouvais voyager dans le temps, quelle époque visiterais tu ?",
 
 "Quelle est ta chanson préférée ?",
 
-"Si tu pouvais rencontrer n'importe quelle personne, morte ou vivante, qui choisirais-tu ?",
+"Si tu pouvais rencontrer n'importe quelle personne, morte ou vivante, qui choisirais tu ?",
 
 "Quelle est ta plus grande peur ?",
 
 "Quel est le trait de caractère que tu apprécies le plus chez les autres ?",
 
-"Si tu avais un jour de congé illimité, que ferais-tu ?",
+"Si tu avais un jour de congé illimité, que ferais tu ?",
 
 "Quelle est ta vision du paradis, ton monde idéal ?",
 
 "Quel est ton plus grand rêve que tu n'as pas encore réalisé ?",
 
-"Si tu pouvais avoir une compétence instantanément, laquelle serait-ce ?",
+"Si tu pouvais avoir une compétence instantanément, laquelle serait ce ?",
 
 "Quelle est ta pire addiction ?",
 
 "Quel est le plat que tu ne pourrais jamais manger ?",
 
-"Quel est le dernier film ou série que tu as binge-watché (regardé d'une traite) ?",
+"Quel est le dernier film ou série que tu as binge watché (regardé d'une traite) ?",
 
-"Si tu pouvais rencontrer un personnage fictif, qui serait-ce ?",
+"Si tu pouvais rencontrer un personnage fictif, qui serait ce ?",
 
 "Quel est le meilleur conseil que tu donnerais à ton toi plus jeune ?",
 
@@ -177,7 +177,7 @@ data = [
 
 "Quel serait le titre de ton autobiographie",
 
-"Comment occupes-tu ton temps libre ?",
+"Comment occupes tu ton temps libre ?",
 
 "Quel est le meilleur conseil que tu aies jamais reçu ?",
 
@@ -195,15 +195,15 @@ data = [
 
 "Quelle est la chose que tu apprécies le plus dans une amitié ?",
 
-"Si tu pouvais vivre dans n'importe quelle époque, laquelle choisirais-tu ?",
+"Si tu pouvais vivre dans n'importe quelle époque, laquelle choisirais tu ?",
 
 "Si tu devais écrire un livre, de quoi ça parlerait ?",
 
-"Si tu pouvais changer une seule chose dans le monde, que serait-ce ?",
+"Si tu pouvais changer une seule chose dans le monde, que serait ce ?",
 
 "Quelle est la chanson qui te donne toujours envie de danser ?",
 
-"Si tu devais décrire ta vie en trois mots, quels seraient-ils ?",
+"Si tu devais décrire ta vie en trois mots, quels seraient ils ?",
 
 "Quel est ton plus grand accomplissement jusqu'à présent ?",
 
@@ -211,11 +211,11 @@ data = [
 
 "Quel est le premier site / première appli que tu consultes le matin ?",
 
-"Si tu pouvais être célèbre pour quelque chose, que serait-ce ?",
+"Si tu pouvais être célèbre pour quelque chose, que serait ce ?",
 
 "Quelle est la chose que tu voudrais accomplir dans les cinq prochaines années ?",
 
-"Si tu pouvais avoir une conversation avec ton moi du futur, que lui demanderais-tu ?"
+"Si tu pouvais avoir une conversation avec ton moi du futur, que lui demanderais tu ?"
 
 
 ]
