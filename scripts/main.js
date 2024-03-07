@@ -363,7 +363,7 @@ const absoluteAnswer = document.querySelector('.absoluteAnswer')
 const absoluteAnswerText = document.querySelector('#absoluteAnswerText')
 const absoluteShowBtn = document.querySelector('.absoluteShowBtn')
 const speak = document.querySelector('#speak')
-
+const finPartieScreen = document.querySelector('.finPartieScreen')
 
 let listeQuestions = []
 let randomQuestions = []
@@ -441,30 +441,49 @@ function answerThis(joueur){
 
 let tourAnswer = 0
 
+document.querySelector('.prochaineManche').addEventListener('click',()=>{
+    selectPlayer.style.display="flex"
+    finPartieScreen.style.display="none"
+    document.querySelector('#settingsOpen').style.display="none"
+    document.querySelector('#writeOpen').style.display="none"
+    for(let i=0; i<listeJoueur.length; i++){  
+        for(let i=0; i<setNbQuestion; i++){
+            if(listeQuestions.length!=listeJoueur.length * setNbQuestion){
+                let newQuestion 
+                do{
+                    let rand = Math.floor(Math.random() * data.length);
+                    newQuestion = data[rand]
+                }
+                while(questionsFaites.includes(newQuestion))
+                listeQuestions.push(newQuestion)
+                questionsFaites.push(newQuestion)
+                }
+            }
+        }
+    randomQuestions = [...listeQuestions];
+    for (let i = randomQuestions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [randomQuestions[i], randomQuestions[j]] = [randomQuestions[j], randomQuestions[i]];
+    }
+    answerThis(listeJoueur[seaki-1])
+})
+
 function montreReponses(){
     if(tourAnswer==randomAnswers.length){  
         document.querySelector('body').style.background="linear-gradient(#7abddc, #357a94)"
+        showAnswersScreen.style.display="none"
+        finPartieScreen.style.display="flex"
+        document.querySelector('#settingsOpen').style.display="block"
+        document.querySelector('#writeOpen').style.display="block"
         listeAnswers.length=0
         randomAnswers.length=0
         seaki=1
         nbQuestion=1
-        tourAnswer=1
-        listeJoueur.length=0
+        tourAnswer=0
+        listeQuestions.length=0
         randomQuestions.length=0
-        for(let i=0; i<listeJoueur.length; i++){
-            for(let i=0; i<setNbQuestion; i++){
-                let rand = Math.floor(Math.random() * data.length);
-                listeQuestions.push(data[rand])
-            }
-        }
-        randomQuestions = [...listeQuestions];
-        for (let i = randomQuestions.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [randomQuestions[i], randomQuestions[j]] = [randomQuestions[j], randomQuestions[i]];
-        }
-        showAnswersScreen.style.display="none"
-        selectPlayer.style.display="flex"
-        answerThis(listeJoueur[seaki-1])
+        nbQuestionWritten.style.display="none"
+        
     }
     else{
         showQuestion.textContent=randomAnswers[tourAnswer].question

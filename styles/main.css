@@ -468,6 +468,11 @@ h2{
     text-align: center;
 }
 
+.finPartieScreen{
+    display: none;
+    flex-direction: column;
+}
+
 
 @font-face {
     font-family: Orangina;
