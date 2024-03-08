@@ -215,7 +215,19 @@ data = [
 
 "Quelle est la chose que tu voudrais accomplir dans les cinq prochaines années ?",
 
-"Si tu pouvais avoir une conversation avec ton moi du futur, que lui demanderais tu ?"
+"Si tu pouvais avoir une conversation avec ton moi du futur, que lui demanderais tu ?",
+
+"Qui est ta personnalité préfére sur Internet ?",
+
+"Si tu étais Youtubeur, de quoi parleraient tes vidéos ?",
+
+"Quel est ton sport préféré ?",
+
+"Quel est ta meilleure unpopular opinion ? (ton opinion la plus controversée)",
+
+"Quel est le mot le plus drôle que tu connaisses ?",
+
+"Avoue nous un petit secret"
 
 
 ]
@@ -441,6 +453,11 @@ function answerThis(joueur){
 
 let tourAnswer = 0
 
+document.querySelector('.startAnswer').addEventListener('click',()=>{
+    finQuestionsScreen.style.display="none"
+    showAnswersScreen.style.display="flex"
+})
+
 document.querySelector('.prochaineManche').addEventListener('click',()=>{
     selectPlayer.style.display="flex"
     finPartieScreen.style.display="none"
@@ -515,49 +532,55 @@ function inputNoEmpty(){
     return isGood
 }
 
+const finQuestionsScreen = document.querySelector('.finQuestionsScreen')
+
 suivant.addEventListener('click',()=>{
     const inputActual = document.querySelectorAll('.inputAddPlayer.inGame')
     inputActual.forEach((el)=>{
         el.classList.remove('noNameInput')
     })
-    if(seaki>listeJoueur.length){
-        nbQuestion=1
-        for(let i=0;i<setNbQuestion;i++){
-            let newAnswer = new Answer
-            nbQuestion++
-            listeAnswers.push(newAnswer)
-        }
-        document.querySelector('body').style.background="linear-gradient(#f3aed9, #b10bb5)"
-        showAnswersScreen.style.display="flex"
-        fillQuestion.style.display="none"
-        prenom.textContent="Sékisa ?"
-        randomAnswers = [...listeAnswers];
-        for (let i = randomAnswers.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [randomAnswers[i], randomAnswers[j]] = [randomAnswers[j], randomAnswers[i]];
-        }
-        montreReponses()
-    }
-    else{ 
-        playSound()
-        if(inputNoEmpty()){
-            nbQuestion=1
-            for(let i=0;i<setNbQuestion;i++){
-                let newAnswer = new Answer
-                nbQuestion++
-                listeAnswers.push(newAnswer)
-            }
-            selectPlayer.style.display="flex"
-            fillQuestion.style.display="none"
-            answerThis(listeJoueur[seaki-1])
-        }
-        else{  
-            inputActual.forEach((el)=>{
-                if(el.value==""){
-                    el.classList.add('noNameInput')
+    if(inputNoEmpty()){
+        if(seaki>listeJoueur.length){
+            if(inputNoEmpty()){
+                nbQuestion=1
+                for(let i=0;i<setNbQuestion;i++){
+                    let newAnswer = new Answer
+                    nbQuestion++
+                    listeAnswers.push(newAnswer)
                 }
-            })
+                document.querySelector('body').style.background="linear-gradient(#f3aed9, #b10bb5)"
+                finQuestionsScreen.style.display="flex"
+                fillQuestion.style.display="none"
+                prenom.textContent="Sékisa ?"
+                randomAnswers = [...listeAnswers];
+                for (let i = randomAnswers.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [randomAnswers[i], randomAnswers[j]] = [randomAnswers[j], randomAnswers[i]];
+                }
+                montreReponses()
+            }
         }
+        else{ 
+            playSound()
+            if(inputNoEmpty()){
+                nbQuestion=1
+                for(let i=0;i<setNbQuestion;i++){
+                    let newAnswer = new Answer
+                    nbQuestion++
+                    listeAnswers.push(newAnswer)
+                }
+                selectPlayer.style.display="flex"
+                fillQuestion.style.display="none"
+                answerThis(listeJoueur[seaki-1])
+            }
+        }
+    }
+    else{  
+        inputActual.forEach((el)=>{
+            if(el.value==""){
+                el.classList.add('noNameInput')
+            }
+        })
     }
 })
 

@@ -473,6 +473,10 @@ h2{
     flex-direction: column;
 }
 
+.finQuestionsScreen{
+    display: none;
+    flex-direction: column;
+}
 
 @font-face {
     font-family: Orangina;
