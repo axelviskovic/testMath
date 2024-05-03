@@ -337,6 +337,14 @@ h2{
     border: 5px solid black;
 }
 
+.hotBtn{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+}
+
 .writeContainer{
     height: 460px;
 }
@@ -377,7 +385,7 @@ h2{
 }
 
 .croixRougeSon, .croixRougeLgbt{
-    display: none;
+    display: block;
     width: 100%;
     position: absolute;
     top: 20px;
@@ -388,7 +396,6 @@ h2{
 }
 
 .croixRougeLgbt{
-    display: block;
     width: 110%;
 }
 

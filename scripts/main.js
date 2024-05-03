@@ -1,7 +1,7 @@
 // Questions
 
 data = [
-'Qui ici aimerais tu pécho ?',
+
 
 'Quelle personnalité devrait devenir président de la république française selon toi ?',
 
@@ -11,8 +11,6 @@ data = [
 
 'Quelle est ta date de naissance ?',
 
-'Si tu pouvais baiser une personne sur cette planète qui serait ce ?',
-
 'Tu as adopté un chien, comme l’appelles tu ?',
 
 'Si tu pouvais te renommer, comment t’appellerais tu ?',
@@ -21,7 +19,7 @@ data = [
 
 'Quel prix max mettrais tu pour des chaussures ?',
 
-'Quel est ton artiste préféré?',
+'Quel est ton artiste préféré ?',
 
 'Quel est le pays où tu aurais voulu vivre ?',
 
@@ -29,11 +27,7 @@ data = [
 
 'Quelles ont été tes meilleures vacances ?',
 
-'Quelle est ta position sexuelle préférée ?',
-
 'Quelle est ta série préférée ?',
-
-'Combien de fois as tu vomi cette année?',
 
 'Quel est ton deuxième prénom?',
 
@@ -47,12 +41,6 @@ data = [
 
 'Si tu pouvais avoir un super pouvoir quel serait il ?',
 
-'Quelle est la durée max que tu aies faite sans dormir ?',
-
-'Combien as tu eu de partenaires sexuels',
-
-'À quel âge as tu fais ta première fois ?',
-
 'Comment s’appelle le nom de ta rue?',
 
 'Quel est le plus haut diplôme que tu aies obtenu ?',
@@ -61,31 +49,15 @@ data = [
 
 'Quel est ton animal totem ?',
 
-'Quel âge avait la personne la plus jeune avec qui tu aies couché ?',
-
-'Quel âge avait la personne la plus vieille avec qui tu aies couché ?',
-
 'Qui rêves tu de voir en concert / festival ?',
 
-'Comment s’appelle la dernière personne avec qui tu aies eu un rapport sexuel ?',
-
-'Combien de drogues (alcool compris, café/sucre pas compris) as tu essayé dans ta vie ?',
-
-'À quand remonte ta dernière cuite ? (Approximativement)',
-
 'Où est tu allé pour tes dernières vacances ?',
-
-'Avec qui ferais tu une coloc dans cette pièce ?',
 
 'Quel est le pays le plus lointain où tu es allé dans ta vie ?',
 
 'Décris ton métier d’une manière bizarre',
 
-'Quelle est la chose la plus hard que tu aies faite sexuellement ?',
-
 'Raconte une chose folle qui t’est arrivée',
-
-'Combien de personnes dans cette pièce as tu déjà embrassé ?',
 
 'Quel est le prénom de ta daronne ?',
 
@@ -93,27 +65,15 @@ data = [
 
 'À quelle heure mets tu ton réveil le matin en semaine ?',
 
-'Quel est ton fantasme ?',
-
 'À quand remonte ton dernier caca ?',
 
-"Comment s'apelle la première personne que tu aies embrassée ?",
-
-"Qui est ton amour le plus récent ?",
-
-'Quel est le dernier fantasme que tu aies réalisé ?',
-
 "Quel est ton métier de rêve ?",
-
-"Quel est l'endroit le plus fou où tu aies fait l'amour ?",
 
 "Quel est le dernier cadeau que tu as offert à quelqu'un ?",
 
 "Quelle est la dernière série que tu as regardée ?",
 
 "Quel est le dernier film que tu as regardé ?",
-
-"À quand remonte la première fois que tu aies fumé ?",
 
 "Qui est le dernier artiste que tu as vu en concert / festival ?",
 
@@ -137,10 +97,6 @@ data = [
 
 "Que penses tu de la situation économique en Argentine depuis la fin du 20ème siècle ?",
 
-"Si tu devais mettre une baffe à quelqu'un ici tu choisirais qui ?",
-
-"Qu'est ce que tu dirais à ton ex si tu le/la croisais ?",
-
 "Si tu pouvais voyager dans le temps, quelle époque visiterais tu ?",
 
 "Quelle est ta chanson préférée ?",
@@ -159,8 +115,6 @@ data = [
 
 "Si tu pouvais avoir une compétence instantanément, laquelle serait ce ?",
 
-"Quelle est ta pire addiction ?",
-
 "Quel est le plat que tu ne pourrais jamais manger ?",
 
 "Quel est le dernier film ou série que tu as binge watché (regardé d'une traite) ?",
@@ -175,7 +129,7 @@ data = [
 
 "Si tu étais une pizza, quelle serait ta garniture?",
 
-"Quel serait le titre de ton autobiographie",
+"Quel serait le titre de ton autobiographie ?",
 
 "Comment occupes tu ton temps libre ?",
 
@@ -229,6 +183,34 @@ data = [
 
 "Avoue nous un petit secret"
 
+
+]
+
+const hotQuestions = [
+    'Qui ici aimerais tu pécho ?',
+    'Si tu pouvais baiser une personne sur cette planète qui serait ce ?',
+    'Quelle est ta position sexuelle préférée ?',
+    'Combien de fois as tu vomi cette année?',
+    'Quelle est la durée max que tu aies faite sans dormir ?',
+    'Combien as tu eu de partenaires sexuels',
+    'À quel âge as tu fais ta première fois ?',
+    'Quel âge avait la personne la plus jeune avec qui tu aies couché ?',
+    'Quel âge avait la personne la plus vieille avec qui tu aies couché ?',
+    'Comment s’appelle la dernière personne avec qui tu aies eu un rapport sexuel ?',
+    'Combien de drogues (alcool compris, café/sucre pas compris) as tu essayé dans ta vie ?',
+    'À quand remonte ta dernière cuite ? (Approximativement)',
+    'Avec qui ferais tu une coloc dans cette pièce ?',
+    'Quelle est la chose la plus hard que tu aies faite sexuellement ?',
+    'Combien de personnes dans cette pièce as tu déjà embrassé ?',
+    'Quel est ton fantasme ?',
+    "Comment s'apelle la première personne que tu aies embrassée ?",
+    "Qui est ton amour le plus récent ?",
+    "Quel est l'endroit le plus fou où tu aies fait l'amour ?",
+    'Quel est le dernier fantasme que tu aies réalisé ?',
+    "À quand remonte la première fois que tu aies fumé ?",
+    "Si tu devais mettre une baffe à quelqu'un ici tu choisirais qui ?",
+    "Qu'est ce que tu dirais à ton ex si tu le/la croisais ?",
+    "Quelle est ta pire addiction ?",
 
 ]
 
@@ -302,8 +284,9 @@ const sounds = document.querySelectorAll('.sound')
 const settingsContainer = document.querySelector('.settingsContainer')
 const nbQuestionCase = document.querySelectorAll('.nbQuestionCase')
 const writeContainer = document.querySelector('.writeContainer')
+const hotBtn = document.querySelector('.hotBtn')
 
-let soundOk = true
+let soundOk = false
 let isLgbt = false
 
 nbQuestionCase.forEach((el)=>{
@@ -323,6 +306,12 @@ function playSound(){
         sounds[rand].play()
     }
 }
+
+hotBtn.addEventListener('click',()=>{
+    hotBtn.style.display="none"
+    document.querySelector('body').style.background="linear-gradient(#ff7878, #6d0404)"
+    data.push(...hotQuestions)
+})
 
 document.querySelector('#settingsOpen').addEventListener('mousedown',()=>{playSound();settingsContainer.style.display="flex"})
 document.querySelector('#settingsBtnClose').addEventListener('mousedown',()=>{playSound();settingsContainer.style.display="none"})
@@ -456,6 +445,7 @@ let tourAnswer = 0
 document.querySelector('.startAnswer').addEventListener('click',()=>{
     finQuestionsScreen.style.display="none"
     showAnswersScreen.style.display="flex"
+    montreReponses()
 })
 
 document.querySelector('.prochaineManche').addEventListener('click',()=>{
@@ -557,7 +547,6 @@ suivant.addEventListener('click',()=>{
                     const j = Math.floor(Math.random() * (i + 1));
                     [randomAnswers[i], randomAnswers[j]] = [randomAnswers[j], randomAnswers[i]];
                 }
-                montreReponses()
             }
         }
         else{ 
