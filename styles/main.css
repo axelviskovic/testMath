@@ -373,7 +373,7 @@ h2{
 }
 
 .iconSettingsContainer{
-    display: none;
+    display: none!important;
     width: 80%;
     margin: 0 auto;
     display: flex;
