@@ -181,7 +181,53 @@ data = [
 
 "Quel est le mot le plus drôle que tu connaisses ?",
 
-"Avoue nous un petit secret"
+"Avoue nous un petit secret",
+
+"Quel est le pays ou tu ne voudrais jamais aller ?",
+
+"Quel est le métier que tu détesterais faire ?",
+
+"Avec quelle personne connue aimerais-tu passer une soirée ?",
+
+"Quelle est la meilleure décision que tu aies jamais prise ?",
+
+"Si tu devais recommencer tes études, que choisirais-tu de faire ?",
+
+"Quelle est la meilleure expérience culinaire que tu aies eue ?",
+
+"Si tu pouvais revisiter un moment de ton passé, lequel serait-ce et pourquoi ?",
+
+"Si tu pouvais échanger ta vie avec quelqu'un d'autre pour une journée, qui choisirais-tu ?",
+
+"Si tu pouvais résoudre un seul problème mondial, lequel serait-ce ?",
+
+"Si tu pouvais passer un message à toute l'humanité, quel serait-il ?",
+
+"Quelle est ta plus grande peur/phobie ?",
+
+"Quelle est la chose que tu espères accomplir avant de mourir ?",
+
+"Quelle est la chose la plus précieuse (ou chère) que tu possèdes et pourquoi ?",
+
+"Quelle est ta routine du soir ?",
+
+"Si tu pouvais passer une journée avec un personnage de fiction, qui choisirais-tu et pourquoi ?",
+
+"Si tu pouvais changer une loi dans ton pays, laquelle serait-ce et pourquoi ?",
+
+"Si tu pouvais créer une organisation caritative, quelle cause soutiendrait-elle ?",
+
+"Quelle est la plus grande leçon de vie que tu aies apprise cette année ?",
+
+"Quelle est la chose que tu attends avec le plus d'impatience ?",
+
+"Quelle est la chose que tu préfères faire pour te détendre ?",
+
+"Si tu pouvais être expert dans un domaine, lequel choisirais-tu ?",
+
+"Quelle est la chose que tu préfères dans ton travail ?",
+
+"Quelle est la chose que tu as préféré faire ce mois-ci ?",
 
 
 ]
@@ -211,6 +257,12 @@ const hotQuestions = [
     "Si tu devais mettre une baffe à quelqu'un ici tu choisirais qui ?",
     "Qu'est ce que tu dirais à ton ex si tu le/la croisais ?",
     "Quelle est ta pire addiction ?",
+    "Avec quelle personne dans cette pièce aimerais tu coucher ?",
+    "Quel est le prénom de ton meilleur coup ?",
+    "À quel fréquence consommes-tu du porno ?",
+    "À quel âge as-tu commencé à te masturber ?",
+    "Raconte nous une fois où tu as merdé pendant un rapport sexuel",
+    "Quelle est la meilleure musique à écouter pendant le sexe ?"
 
 ]
 

@@ -1,127 +1,176 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Sékisa</title>
-    <meta name="description" content="description de la page"/>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <img id="settingsOpen" src="images/settings.png">
-    <img id="writeOpen" src="images/write.png">
-    <!-- Page de séléction des joueurs -->
-    <div class="pagePlayerSelect">
-        <h1>Sékisa ?</h1>
 
-        <div class="containerAddPlayer">
-          <input placeholder="Entrer un joueur" maxlength="20" class="inputAddPlayer"></input>
-          <button class="buttonAddPlayer"><p>+</p></button>
-        </div>
+<head>
+  <meta charset="utf-8" />
+  <title>Sékisa</title>
+  <meta name="description" content="description de la page" />
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
 
-        <div class="containerlistPlayer">
-        </div>
+<body>
+  <img id="settingsOpen" src="images/settings.png">
+  <img id="writeOpen" src="images/write.png">
+  <!-- Page de séléction des joueurs -->
+  <div class="pagePlayerSelect">
+    <h1>Sékisa ?</h1>
 
-        <div class="button1 buttonValidationPlayer"><h1 class="btnText">Lancer la partie</h1></div>
+    <div class="containerAddPlayer">
+      <input placeholder="Entrer un joueur" maxlength="20" class="inputAddPlayer"></input>
+      <button class="buttonAddPlayer">
+        <p>+</p>
+      </button>
     </div>
 
-    <!-- FILL QUESTIONS SCREEN -->
-    <div class="fillQuestionScreen">
-      <h1 class="prenom">Prenom</h1>
-      <div class="selectPlayer">
-        
-        <h2>C'est à ton tour</h2>
-        <button class="lesgo button1"><h1 class="btnText">Let's go</h1></button>
-      </div>
-      <div class="fillQuestion">
-        <!-- <h2 id="question1" class="questionTitle">Comment vont-je bonsoir a tous bitch</h2>
+    <div class="containerlistPlayer">
+    </div>
+
+    <div class="button1 buttonValidationPlayer">
+      <h1 class="btnText">Lancer la partie</h1>
+    </div>
+  </div>
+
+  <!-- FILL QUESTIONS SCREEN -->
+  <div class="fillQuestionScreen">
+    <h1 class="prenom">Prenom</h1>
+    <div class="selectPlayer">
+
+      <h2>C'est à ton tour</h2>
+      <button class="lesgo button1">
+        <h1 class="btnText">Let's go</h1>
+      </button>
+    </div>
+    <div class="fillQuestion">
+      <!-- <h2 id="question1" class="questionTitle">Comment vont-je bonsoir a tous bitch</h2>
         <input id="answer1" class="inputAddPlayer inGame" type="text"></input>
         <h2 id="question2" class="questionTitle">Comment vont-je bonsoir a tous bitch</h2>
         <input id="answer2" class="inputAddPlayer inGame" type="text"></input>
         <h2 id="question3" class="questionTitle">Comment vont-je bonsoir a tous bitch</h2>
         <input id="answer3" class="inputAddPlayer inGame" type="text"></input> -->
-        <button class="suivant button1"><h1 class="btnText">Suivant</h1></button>
+      <button class="suivant button1">
+        <h1 class="btnText">Suivant</h1>
+      </button>
+    </div>
+  </div>
+
+  <!-- SHOW SCREEN ANSWERS -->
+  <div class="showAnswersScreen">
+    <h2 id="showQuestion" class="questionTitle">question à compléter</h2>
+    <h3 id="showAnswer" class="reponseH3">Réponse à compléter</h3>
+    <button id="speak">Répéter</button>
+    <button class="button1 buttonAnswer">
+      <h1 class="btnText">Réponse</h1>
+    </button>
+  </div>
+  <div class="absoluteAnswer">
+    <h2 id="absoluteAnswerText">Réponse : Ta mère</h1>
+      <button class="button1 absoluteShowBtn">
+        <h1 class="btnText">Suivant</h1>
+      </button>
+  </div>
+
+  <!-- FIN DES QUESTIONS -->
+  <div class="finQuestionsScreen">
+    <h1>Maintenant, Sékisa ?</h1>
+    <h2>Trouvez qui a répondu à la question que vous verrez sur l'écran</h2>
+    <button class="startAnswer button1">
+      <h1 class="btnText">Commencer</h1>
+    </button>
+  </div>
+
+  <!-- FIN DE PARTIE -->
+  <div class="finPartieScreen">
+    <h1>Fin de partie !</h1>
+    <button class="prochaineManche button1">
+      <h1 class="btnText">Prochaine partie</h1>
+    </button>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="settingsContainer">
+    <div class="hotBtn"></div>
+    <img id="settingsBtnClose" src="images/close.png">
+    <h2>Paramètres</h2>
+    <div class="iconSettingsContainer">
+      <div id="sonSetting" class="iconContainer">
+        <div class="croixRougeSon"></div>
+        <img id="soundIcon" src="images/soundIcon.webp">
+      </div>
+      <div id="lgbtSetting" class="iconContainer">
+        <div class="croixRougeLgbt"></div>
+        <img id="lgbtIcon" src="images/lgbt.png">
       </div>
     </div>
-
-    <!-- SHOW SCREEN ANSWERS -->
-    <div class="showAnswersScreen">
-      <h2 id="showQuestion" class="questionTitle">question à compléter</h2>
-      <h3 id="showAnswer" class="reponseH3">Réponse à compléter</h3>
-      <button id="speak">Répéter</button>
-      <button class="button1 buttonAnswer"><h1 class="btnText">Réponse</h1></button>
-    </div>
-    <div class="absoluteAnswer">
-      <h2 id="absoluteAnswerText">Réponse : Ta mère</h1>
-      <button class="button1 absoluteShowBtn"><h1 class="btnText">Suivant</h1></button>
-    </div>
-
-    <!-- FIN DES QUESTIONS -->
-    <div class="finQuestionsScreen">
-      <h1>Maintenant, Sékisa ?</h1>
-      <h2>Trouvez qui a répondu à la question que vous verrez sur l'écran</h2>
-      <button class="startAnswer button1"><h1 class="btnText">Commencer</h1></button>
-    </div>
-
-    <!-- FIN DE PARTIE -->
-    <div class="finPartieScreen">
-      <h1>Fin de partie !</h1>
-      <button class="prochaineManche button1"><h1 class="btnText">Prochaine partie</h1></button>
-    </div>
-
-    <!-- SETTINGS -->
-    <div class="settingsContainer">
-      <div class="hotBtn"></div>
-      <img id="settingsBtnClose" src="images/close.png">
-      <h2>Paramètres</h2>
-      <div class="iconSettingsContainer">
-        <div id="sonSetting" class="iconContainer">
-          <div class="croixRougeSon"></div>
-          <img id="soundIcon" src="images/soundIcon.webp">
-        </div>
-        <div id="lgbtSetting" class="iconContainer">
-          <div class="croixRougeLgbt"></div>
-          <img id="lgbtIcon" src="images/lgbt.png">
-        </div>  
-        </div>
-      <h3>Nombre de questions par personne</h3>
-      <div class="nbQuestionSettings">
-        <div data="3" class="nbQuestionCase nbQuestionSelected"><h4>3</h4></div>
-        <div data="5" class="nbQuestionCase"><h4>5</h4></div>
-        <div data="7" class="nbQuestionCase"><h4>7</h4></div>
-        <div data="10" class="nbQuestionCase"><h4>10</h4></div>
+    <h3>Nombre de questions par personne</h3>
+    <div class="nbQuestionSettings">
+      <div data="3" class="nbQuestionCase nbQuestionSelected">
+        <h4>3</h4>
+      </div>
+      <div data="5" class="nbQuestionCase">
+        <h4>5</h4>
+      </div>
+      <div data="7" class="nbQuestionCase">
+        <h4>7</h4>
+      </div>
+      <div data="10" class="nbQuestionCase">
+        <h4>10</h4>
       </div>
     </div>
+  </div>
 
-    <!-- WRITE QUESTIONS -->
-    <div class="writeContainer">
-      <img id="writeBtnClose" src="images/close.png">
-      <h2>Écris une question</h2>
-      <textarea id="writeQuestionInput" class="inputAddPlayer" type="text"></textarea>
-      <h3 id="nbQuestionWritten">Total : 3</h3>
-      <div class="button1 buttonValidationPlayer writeQuestion"><h1 class="btnText">Envoyer</h1></div>
+  <!-- WRITE QUESTIONS -->
+  <div class="writeContainer">
+    <img id="writeBtnClose" src="images/close.png">
+    <h2>Écris une question</h2>
+    <textarea id="writeQuestionInput" class="inputAddPlayer" type="text"></textarea>
+    <h3 id="nbQuestionWritten">Total : 3</h3>
+    <div class="button1 buttonValidationPlayer writeQuestion">
+      <h1 class="btnText">Envoyer</h1>
     </div>
+  </div>
 
-    <!-- SOUNDS -->
-    <audio class="sound" src="sounds/fart.mp3"></audio>
-    <audio class="sound" src="sounds/fart2.mp3"></audio>
-    <audio class="sound" src="sounds/fart3.mp3"></audio>
-    <audio class="sound" src="sounds/fart4.mp3"></audio>
-    <audio class="sound" src="sounds/fart5.mp3"></audio>
-    <audio class="sound" src="sounds/bavwing.wav"></audio>
-    <audio class="sound" src="sounds/bbbbing.wav"></audio>
-    <audio class="sound" src="sounds/boing.wav"></audio>
-    <audio class="sound" src="sounds/question.wav"></audio>
-    <audio class="sound" src="sounds/question2.wav"></audio>
-    <audio class="sound" src="sounds/slip fall.wav"></audio>
-    <audio class="sound" src="sounds/slip.wav"></audio>
-    <audio class="sound" src="sounds/wobble.wav"></audio>
+  <!-- SOUNDS -->
+  <audio class="sound" src="sounds/fart.mp3"></audio>
+  <audio class="sound" src="sounds/fart2.mp3"></audio>
+  <audio class="sound" src="sounds/fart3.mp3"></audio>
+  <audio class="sound" src="sounds/fart4.mp3"></audio>
+  <audio class="sound" src="sounds/fart5.mp3"></audio>
+  <audio class="sound" src="sounds/bavwing.wav"></audio>
+  <audio class="sound" src="sounds/bbbbing.wav"></audio>
+  <audio class="sound" src="sounds/boing.wav"></audio>
+  <audio class="sound" src="sounds/question.wav"></audio>
+  <audio class="sound" src="sounds/question2.wav"></audio>
+  <audio class="sound" src="sounds/slip fall.wav"></audio>
+  <audio class="sound" src="sounds/slip.wav"></audio>
+  <audio class="sound" src="sounds/wobble.wav"></audio>
 
-    
 
-    <script src="scripts/main.js"></script>
 
-  </body>
+  <script src="scripts/main.js"></script>
+
+</body>
+
 </html>
+
+
+<div class="md:table-row">
+  <p class="relative font-bold pr-7 md:py-1 md:font-normal md:table-cell whitespace-nowrap">File size:</p><span id="newAbText">${newAbText}</span><div class="2sm:relative group inline-block px-1 ml-1">
+    <div class="relative" aria-describedby="2"><svg aria-hidden="true" focusable="false" data-prefix="fal"
+        data-icon="circle-question" class="svg-inline--fa fa-circle-question " role="img"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor"
+          d="M480 256A224 224 0 1 0 32 256a224 224 0 1 0 448 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm168.7-86.2c6.5-24.6 28.7-41.8 54.2-41.8H280c35.5 0 64 29 64 64.3c0 24-13.4 46.2-34.9 57.2L272 268.3V288c0 8.8-7.2 16-16 16s-16-7.2-16-16V258.5c0-6 3.4-11.5 8.7-14.3l45.8-23.4c10.7-5.4 17.5-16.6 17.5-28.7c0-17.8-14.4-32.3-32-32.3H222.9c-10.9 0-20.5 7.4-23.2 17.9l-.2 .7c-2.2 8.5-11 13.7-19.5 11.4s-13.7-11-11.4-19.5l.2-.7zM232 352a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z">
+        </path>
+      </svg><span
+        class="border-grey-deep absolute left-1/2 z-20 hidden -translate-x-1/2 rotate-45 group-hover:block top-[22px] size-4 border-l border-t bg-white"></span>
+    </div>
+    <div id="2" aria-hidden="true"
+      class="border-grey-deep 2sm:p-3 2sm:left-1/2 2sm:right-auto 2sm:-translate-x-1/2 absolute inset-x-0 z-10 hidden rounded p-5 pb-3 text-xs shadow-md transition duration-700 ease-in-out group-hover:block 2sm:w-44 mt-2.5 rounded border bg-white">
+      Open your image file to the full size using image processing software.</div>
+  </div>
+</div>
+
+
